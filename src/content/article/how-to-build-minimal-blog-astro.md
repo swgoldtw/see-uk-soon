@@ -5,8 +5,8 @@ pubDate: 2025-06-01
 category: "Web Dev"
 tags: ["astro", "web development", "static sites"]
 featured: true
-thumb: "https://images.unsplash.com/photo-1463171515643-952cee54d42a?auto=format&fit=crop&w=400&q=80"
-large: "https://images.unsplash.com/photo-1463171515643-952cee54d42a?auto=format&fit=crop&w=2400&q=80"
+thumb: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+large: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2400&q=80"
 ---
 
 Astro is revolutionizing the way we build static websites. In this comprehensive guide, we'll explore how to create a minimal, fast-loading blog that prioritizes performance and simplicity.
