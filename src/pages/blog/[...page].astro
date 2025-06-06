@@ -3,9 +3,11 @@ import { getCollection } from "astro:content"
 import type { GetStaticPaths } from "astro"
 import BlogLayout from "../../layouts/BlogLayout.astro"
 import Header from "../../components/Header.astro"
+import Footer from "../../components/Footer.astro"
 import PostCard from "../../components/PostCard.astro"
 import FeaturedCard from "../../components/FeaturedCard.astro"
 import Pagination from "../../components/Pagination.astro"
+import SiteOptions from "../../site.config.mjs"
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection("article")
@@ -22,7 +24,7 @@ const { page } = Astro.props
 const allPosts = await getCollection("article")
 const featuredPosts = page.currentPage === 1 ? allPosts.filter((post) => post.data.featured).slice(0, 3) : []
 
-const pageTitle = page.currentPage === 1 ? "Lilith's Monochrome Blog" : `Blog - Page ${page.currentPage} | Lilith's Monochrome Blog`
+const pageTitle = page.currentPage === 1 ? SiteOptions.siteTitle : `Blog - Page ${page.currentPage} | ${SiteOptions.siteTitle}`
 ---
 
 <BlogLayout title={pageTitle}>
@@ -73,13 +75,5 @@ const pageTitle = page.currentPage === 1 ? "Lilith's Monochrome Blog" : `Blog - 
   <Pagination page={page} />
 
   <!-- Minimal Footer -->
-  <footer class="mt-16 py-8 text-center flex justify-between text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
-    <p>&copy; 2025 Lilith's Blog. All rights reserved.</p>
-    <nav class="">
-      <div class="flex items-center justify-center space-x-8 text-sm">
-        <a href="/categories" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium">Categories</a>
-        <a href="/tags" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium">Tags</a>
-      </div>
-    </nav>
-  </footer>
+  <Footer />
 </BlogLayout>

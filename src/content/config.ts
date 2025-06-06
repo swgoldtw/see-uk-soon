@@ -6,7 +6,7 @@ const articleCollection = defineCollection({
         title: z.string(),
         description: z.string(),
         pubDate: z.date(),
-        author: z.string().default('Lilith Morgan'),
+        author: z.string().default('Hasin Hayder'),
         category: z.string(),
         tags: z.array(z.string()),
         featured: z.boolean().default(false),

@@ -2,8 +2,10 @@
 import { getCollection } from "astro:content"
 import BlogLayout from "../layouts/BlogLayout.astro"
 import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 import PostCard from "../components/PostCard.astro"
 import FeaturedCard from "../components/FeaturedCard.astro"
+import SiteOptions from "../site.config.mjs"
 
 // Get all articles and sort by publication date
 const allPosts = await getCollection("article")
@@ -13,18 +15,19 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() -
 const featuredPosts = allPosts.filter((post) => post.data.featured).slice(0, 3)
 
 // Get latest posts for homepage (limit to 6)
-const latestPosts = sortedPosts.slice(0, 6)
+const latestPosts = sortedPosts.slice(0, SiteOptions.numberOfLatestPostsPerPage || 6)
 ---
 
-<BlogLayout title="Lilith's Monochrome Blog">
+<BlogLayout title=`${SiteOptions.siteTitle}`>
   <Header />
 
   <!-- Light Horizontal Bar -->
   <hr class="border-t border-gray-200 dark:border-gray-700 my-8" />
 
   <!-- Featured Blog Posts -->
+
   {
-    featuredPosts.length > 0 && (
+    SiteOptions.showFeaturrdPostsOnHomePage && featuredPosts.length > 0 && (
       <section class="mb-16">
         <h2 class="text-2xl font-semibold mb-8 text-center">Featured Posts</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -39,7 +42,7 @@ const latestPosts = sortedPosts.slice(0, 6)
 
   <!-- Latest Blog Posts -->
   <section>
-    <h2 class="text-2xl font-semibold mb-8 text-center">Latest Posts</h2>
+    {SiteOptions.labels.latestPosts && <h2 class="text-2xl font-semibold mb-8 text-center">{SiteOptions.labels.latestPosts}</h2>}
     <ul class="space-y-4">
       {latestPosts.map((post) => <PostCard post={post} />)}
     </ul>
@@ -50,7 +53,7 @@ const latestPosts = sortedPosts.slice(0, 6)
         <div class="text-center mt-8">
           <a href="/blog/" class="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md transition-colors">
             {/* View All Posts ({sortedPosts.length}) */}
-            View All Posts
+            {SiteOptions.labels.viewAllPosts}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
@@ -58,16 +61,8 @@ const latestPosts = sortedPosts.slice(0, 6)
         </div>
       )
     }
-  </section>
 
-  <!-- Minimal Footer -->
-  <footer class="mt-16 py-8 text-center flex justify-between text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
-    <p>&copy; 2025 Lilith's Blog. All rights reserved.</p>
-    <nav class="">
-      <div class="flex items-center justify-center space-x-8 text-sm">
-        <a href="/categories" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Categories </a>
-        <a href="/tags" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Tags </a>
-      </div>
-    </nav>
-  </footer>
+    <!-- Minimal Footer -->
+    <Footer />
+  </section>
 </BlogLayout>

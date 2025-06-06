@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content"
+import SiteOptions from "../site.config.mjs"
 
 export interface Props {
   post: CollectionEntry<"article">
@@ -11,7 +12,7 @@ const { title, description, thumb } = post.data
 
 <article class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm p-6 flex flex-col items-start">
   {
-    thumb && (
+    SiteOptions.showThumbnailOnFeaturedPosts && thumb && (
       <a href={`/article/${post.slug}`}>
         <img src={thumb} alt={title} class="w-full h-40 object-cover rounded mb-4" />
       </a>
@@ -19,5 +20,11 @@ const { title, description, thumb } = post.data
   }
   <h3 class="text-xl font-bold mb-2"><a href={`/article/${post.slug}`}>{title}</a></h3>
   <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">{description}</p>
-  <a href={`/article/${post.slug}`} class="text-black dark:text-white underline text-sm mt-auto self-start"> Read More </a>
+  {
+    SiteOptions.showReadMoreLinkOnFeaturedPosts && (
+      <a href={`/article/${post.slug}`} class="text-black dark:text-white underline text-sm mt-auto self-start">
+        Read More
+      </a>
+    )
+  }
 </article>

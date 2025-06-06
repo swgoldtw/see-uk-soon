@@ -2,7 +2,9 @@
 import { type CollectionEntry, getCollection } from "astro:content"
 import BlogLayout from "../../layouts/BlogLayout.astro"
 import Header from "../../components/Header.astro"
+import Footer from "../../components/Footer.astro"
 import PostCard from "../../components/PostCard.astro"
+import SiteOptions from "../../site.config.mjs"
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("article")
@@ -27,7 +29,7 @@ type Props = {
 const { category, posts } = Astro.props
 ---
 
-<BlogLayout title={`${category} Articles - Lilith's Monochrome Blog`} description={`Articles in the ${category} category`}>
+<BlogLayout title={`${category} Articles - ${SiteOptions.siteTitle}`} description={`Articles in the ${category} category`}>
   <Header showTitle={false} />
 
   <!-- Light Horizontal Bar -->
@@ -78,5 +80,5 @@ const { category, posts } = Astro.props
   </div>
 
   <!-- Minimal Footer -->
-  <footer class="mt-16 py-8 text-center text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">&copy; 2025 Lilith's Blog. All rights reserved.</footer>
+  <Footer />
 </BlogLayout>
