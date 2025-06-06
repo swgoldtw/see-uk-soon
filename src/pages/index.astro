@@ -42,5 +42,13 @@ const featuredPosts = allPosts.filter((post) => post.data.featured).slice(0, 3)
   }
 
   <!-- Minimal Footer -->
-  <footer class="mt-16 py-8 text-center text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">&copy; 2025 Lilith's Blog. All rights reserved.</footer>
+  <footer class="mt-16 py-8 text-center flex justify-between text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
+    <p>&copy; 2025 Lilith's Blog. All rights reserved.</p>
+    <nav class="">
+      <div class="flex items-center justify-center space-x-8 text-sm">
+        <a href="/categories" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Categories </a>
+        <a href="/tags" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Tags </a>
+      </div>
+    </nav>
+  </footer>
 </BlogLayout>

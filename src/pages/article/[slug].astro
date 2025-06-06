@@ -20,7 +20,7 @@ const { Content } = await post.render()
 
 // Get similar posts (same category, excluding current post)
 const allPosts = await getCollection("article")
-const similarPosts = allPosts.filter((p) => p.slug !== post.slug && p.data.category === category).slice(0, 3)
+const similarPosts = allPosts.filter((p) => p.slug !== post.slug && p.data.category === post.data.category).slice(0, 3)
 
 const formattedDate = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
@@ -30,7 +30,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 ---
 
 <BlogLayout title={title} description={description}>
-  <Header showTitle={false} />
+  <Header showTitle={true} />
 
   <!-- Light Horizontal Bar -->
   <hr class="border-t border-gray-200 dark:border-gray-700 my-8" />
@@ -84,11 +84,12 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   </article>
 
   <!-- Light Horizontal Bar -->
-  <hr class="border-t border-gray-200 dark:border-gray-700 my-12" />
+  
 
   <!-- Similar Posts Section -->
   {
     similarPosts.length > 0 && (
+    <hr class="border-t border-gray-200 dark:border-gray-700 my-12" />
       <section>
         <h2 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-slate-200">You Might Also Like</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -101,5 +102,13 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   }
 
   <!-- Minimal Footer -->
-  <footer class="mt-16 py-8 text-center text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">&copy; 2025 Lilith's Blog. All rights reserved.</footer>
+  <footer class="mt-16 py-8 text-center flex justify-between text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
+    <p>&copy; 2025 Lilith's Blog. All rights reserved.</p>
+    <nav class="">
+      <div class="flex items-center justify-center space-x-8 text-sm">
+        <a href="/categories" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Categories </a>
+        <a href="/tags" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium"> Tags </a>
+      </div>
+    </nav>
+  </footer>
 </BlogLayout>
