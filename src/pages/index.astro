@@ -11,6 +11,9 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() -
 
 // Get featured posts
 const featuredPosts = allPosts.filter((post) => post.data.featured).slice(0, 3)
+
+// Get latest posts for homepage (limit to 6)
+const latestPosts = sortedPosts.slice(0, 6)
 ---
 
 <BlogLayout title="Lilith's Monochrome Blog">
@@ -19,27 +22,43 @@ const featuredPosts = allPosts.filter((post) => post.data.featured).slice(0, 3)
   <!-- Light Horizontal Bar -->
   <hr class="border-t border-gray-200 dark:border-gray-700 my-8" />
 
-  <!-- Latest Blog Posts -->
-  <section>
-    <h2 class="sr-only">Latest Posts</h2>
-    <ul class="space-y-4">
-      {sortedPosts.map((post) => <PostCard post={post} />)}
-    </ul>
-  </section>
-
   <!-- Featured Blog Posts -->
   {
     featuredPosts.length > 0 && (
-      <section class="mt-16">
+      <section class="mb-16">
         <h2 class="text-2xl font-semibold mb-8 text-center">Featured Posts</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredPosts.map((post) => (
             <FeaturedCard post={post} />
           ))}
         </div>
+        <hr class="border-t border-gray-200 dark:border-gray-700 my-12" />
       </section>
     )
   }
+
+  <!-- Latest Blog Posts -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-8 text-center">Latest Posts</h2>
+    <ul class="space-y-4">
+      {latestPosts.map((post) => <PostCard post={post} />)}
+    </ul>
+
+    <!-- View All Posts Link -->
+    {
+      sortedPosts.length > 6 && (
+        <div class="text-center mt-8">
+          <a href="/blog/" class="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md transition-colors">
+            {/* View All Posts ({sortedPosts.length}) */}
+            View All Posts
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      )
+    }
+  </section>
 
   <!-- Minimal Footer -->
   <footer class="mt-16 py-8 text-center flex justify-between text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
