@@ -8,8 +8,6 @@ featured: true
 image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=400&q=80"
 ---
 
-# Building Accessible Web Interfaces
-
 Web accessibility isn't just a nice-to-have feature—it's a fundamental requirement for creating inclusive digital experiences. When we build accessible interfaces, we create better experiences for everyone, not just users with disabilities.
 
 ## Why Accessibility Matters

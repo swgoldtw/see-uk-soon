@@ -8,8 +8,6 @@ featured: true
 thumb: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
 ---
 
-# Dark Mode: A UX Perspective
-
 Dark mode has evolved from a niche developer preference to a mainstream feature expected by users across all types of applications. But implementing dark mode well requires more than just inverting colors—it's about understanding user needs and creating an experience that works in all lighting conditions.
 
 ## Why Users Love Dark Mode

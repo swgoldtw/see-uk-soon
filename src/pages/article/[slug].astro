@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"article">
 
 const post = Astro.props
-const { title, pubDate, category, description, thumb, author, tags } = post.data
+const { title, pubDate, category, description, thumb, author, tags, large } = post.data
 const { Content } = await post.render()
 
 // Get similar posts (same category, excluding current post)
@@ -71,9 +71,9 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 
   <!-- Show featured image -->
   {
-    thumb && (
+    large && (
       <div class="mb-8">
-        <img src={thumb} alt={title} class="w-full h-auto rounded-lg shadow-md" />
+        <img src={large} alt={title} class="w-full h-auto rounded-lg shadow-md" />
       </div>
     )
   }

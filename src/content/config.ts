@@ -11,6 +11,7 @@ const articleCollection = defineCollection({
         tags: z.array(z.string()),
         featured: z.boolean().default(false),
         thumb: z.string().optional(),
+        large: z.string().optional(),
     }),
 });
 

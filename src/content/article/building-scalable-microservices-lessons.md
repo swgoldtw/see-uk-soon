@@ -8,8 +8,6 @@ featured: false
 thumb: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=400&q=80"
 ---
 
-# Building Scalable Microservices: Lessons from the Trenches
-
 After five years of building, breaking, and rebuilding microservices architectures, I've learned that the devil is truly in the details. While the promise of microservices is compelling - independent deployments, technology diversity, team autonomy - the reality is far more nuanced.
 
 ## The Journey from Monolith to Microservices

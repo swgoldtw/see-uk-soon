@@ -8,8 +8,6 @@ featured: false
 thumb: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
 ---
 
-# Mastering CSS Grid: A Complete Guide
-
 CSS Grid Layout is the most powerful layout system available in CSS. It's a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system. Working with CSS Grid takes a bit of getting used to, but once you understand it, you'll never want to go back.
 
 ## What is CSS Grid?

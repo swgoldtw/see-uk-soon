@@ -60,10 +60,10 @@ const pageTitle = page.currentPage === 1 ? "Lilith's Monochrome Blog" : `Blog - 
 
   <!-- Latest Blog Posts -->
   <section>
-    <h2 class={`text-2xl font-semibold mb-8  text-center`}>
-      <!-- {page.currentPage === 1 ? "Latest Posts" : "All Posts"} -->
-      <!-- All Posts -->
-    </h2>
+    <!-- <h2 class={`text-2xl font-semibold mb-8  text-center`}> -->
+    <!-- {page.currentPage === 1 ? "Latest Posts" : "All Posts"} -->
+    <!-- All Posts -->
+    <!-- </h2> -->
     <ul class="space-y-4">
       {page.data.map((post) => <PostCard post={post} />)}
     </ul>

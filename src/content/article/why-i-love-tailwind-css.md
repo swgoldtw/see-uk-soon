@@ -7,8 +7,6 @@ tags: ["tailwind", "css", "web development"]
 featured: false
 ---
 
-# Why I Love Tailwind CSS
-
 When I first heard about Tailwind CSS, I was skeptical. "Utility classes? Isn't that just inline styles with extra steps?" I thought. But after giving it a fair try, I'm completely converted. Here's why Tailwind has become my go-to CSS framework.
 
 ## The Utility-First Approach

@@ -8,8 +8,6 @@ featured: true
 thumb: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80"
 ---
 
-# Sustainable Web Development: Building for the Planet
-
 The internet consumes approximately 4% of global electricity and produces around 4% of global CO2 emissions - equivalent to the aviation industry. As developers, we have both the responsibility and the power to reduce the environmental impact of our digital creations. Sustainable web development isn't just about being eco-friendly; it often results in faster, more efficient, and more accessible websites.
 
 ## Understanding Digital Carbon Footprint
