@@ -7,8 +7,6 @@ tags: ["development", "best practices", "software"]
 featured: false
 ---
 
-# The Art of Writing Clean Code
-
 Writing code is easy. Writing clean code is an art form. Clean code is not just about making your program work—it's about creating something that others (including your future self) can understand, maintain, and extend.
 
 ## What Makes Code "Clean"?

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css"
+
 export interface Props {
   title: string
   description?: string
@@ -16,70 +17,30 @@ const { title, description = "Minimal musings on code, design, and life" } = Ast
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-
     <script is:inline>
-      // Prevent flash of unstyled content (FOUC) by setting theme before page renders
-      ;(function () {
-        const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      // Theme initialization - prevents FOUC
+      ;(() => {
+        const theme = localStorage.getItem("theme") ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
 
-        if (theme === "dark") {
-          document.documentElement.classList.add("dark")
-        } else {
-          document.documentElement.classList.remove("dark")
-        }
+        document.documentElement.classList.toggle("dark", theme === "dark")
       })()
     </script>
   </head>
+
   <body class="bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 min-h-full">
-    <!-- Black Topbar -->
     <div class="w-full bg-black h-3"></div>
 
-    <!-- Main Container -->
-    <div class="max-w-[1000px] mx-auto px-4">
+    <main class="max-w-[1000px] mx-auto px-4">
       <slot />
-    </div>
+    </main>
 
-    <script is:inline>
-      function toggleTheme() {
-        const html = document.documentElement
-        const currentTheme = html.classList.contains("dark") ? "dark" : "light"
-        const newTheme = currentTheme === "dark" ? "light" : "dark"
-
-        if (newTheme === "dark") {
-          html.classList.add("dark")
-        } else {
-          html.classList.remove("dark")
-        }
-
-        localStorage.setItem("theme", newTheme)
-        updateThemeIcons()
-      }
-
-      function updateThemeIcons() {
-        const isDark = document.documentElement.classList.contains("dark")
-        const sunIcon = document.getElementById("sun-icon")
-        const moonIcon = document.getElementById("moon-icon")
-
-        if (sunIcon && moonIcon) {
-          if (isDark) {
-            sunIcon.classList.remove("hidden")
-            moonIcon.classList.add("hidden")
-          } else {
-            sunIcon.classList.add("hidden")
-            moonIcon.classList.remove("hidden")
-          }
-        }
-      }
-
-      // Initialize theme icons on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        updateThemeIcons()
-      })
-    </script>
+    <script is:inline src="/scripts/theme-toggle.js"></script>
+    
   </body>
 </html>
+
 <style>
   @view-transition {
-    navigation: auto; /* enabled! */
+    navigation: auto;
   }
 </style>

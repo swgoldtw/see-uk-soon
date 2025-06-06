@@ -5,7 +5,7 @@ pubDate: 2025-05-18
 category: "UX"
 tags: ["dark mode", "ux design", "accessibility"]
 featured: true
-image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+thumb: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
 ---
 
 # Dark Mode: A UX Perspective

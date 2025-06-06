@@ -3,9 +3,9 @@ title: "Monochrome UI: Less is More"
 description: "Exploring the power of monochrome design in creating elegant, focused user interfaces."
 pubDate: 2025-05-28
 category: "Design"
-tags: ["ui design", "minimalism", "color theory"]
+tags: ["ui design", "minimalism", "color theory", "css"]
 featured: true
-image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+thumb: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
 ---
 
 # Monochrome UI: Less is More
