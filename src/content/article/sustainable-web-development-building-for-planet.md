@@ -6,6 +6,7 @@ category: "Sustainability"
 tags: ["sustainability", "green-tech", "performance", "eco-friendly", "web-development"]
 featured: true
 thumb: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80"
+large: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=80"
 ---
 
 The internet consumes approximately 4% of global electricity and produces around 4% of global CO2 emissions - equivalent to the aviation industry. As developers, we have both the responsibility and the power to reduce the environmental impact of our digital creations. Sustainable web development isn't just about being eco-friendly; it often results in faster, more efficient, and more accessible websites.

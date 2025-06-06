@@ -5,8 +5,8 @@ pubDate: 2025-05-28
 category: "Design"
 tags: ["ui design", "minimalism", "color theory", "css"]
 featured: true
-thumb: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
-large: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=2400&q=80"
+thumb: "https://images.unsplash.com/photo-1476846764689-14e2b6b2f133?auto=format&fit=crop&w=400&q=80"
+large: "https://images.unsplash.com/photo-1476846764689-14e2b6b2f133?auto=format&fit=crop&w=2400&q=80"
 ---
 
 In a world saturated with vibrant colors and complex interfaces, monochrome design stands as a testament to the power of restraint. This approach to UI design emphasizes hierarchy, typography, and spacing over chromatic complexity.

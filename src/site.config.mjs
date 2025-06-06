@@ -5,6 +5,7 @@ export default {
     showAuthorsOnHomePage: false,
     showFeaturrdPostsOnHomePage: true,
     labels: {
+        featuredPosts: "Featured Posts",
         latestPosts: "Latest Posts",
         viewAllPosts: "View All Posts",
         backToHome: "Back to Home"

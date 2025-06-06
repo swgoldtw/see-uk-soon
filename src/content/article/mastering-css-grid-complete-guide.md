@@ -2,10 +2,11 @@
 title: "Mastering CSS Grid: A Complete Guide"
 description: "Learn how to create complex, responsive layouts with CSS Grid - the most powerful layout system in CSS."
 pubDate: 2025-05-20
-category: "Web Development"
+category: "Web Dev"
 tags: ["css", "grid", "layout", "responsive", "frontend"]
 featured: false
-thumb: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+thumb: "https://images.unsplash.com/photo-1522115900503-5dc493006ffd?auto=format&fit=crop&w=400&q=80"
+large: "https://images.unsplash.com/photo-1522115900503-5dc493006ffd?auto=format&fit=crop&w=2400&q=80"
 ---
 
 CSS Grid Layout is the most powerful layout system available in CSS. It's a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system. Working with CSS Grid takes a bit of getting used to, but once you understand it, you'll never want to go back.

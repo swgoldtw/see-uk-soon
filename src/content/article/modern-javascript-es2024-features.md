@@ -6,6 +6,7 @@ category: "JavaScript"
 tags: ["javascript", "es2024", "frontend", "language-features", "modern-js"]
 featured: false
 thumb: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=400&q=80"
+large: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=2400&q=80"
 ---
 
 JavaScript continues to evolve at a rapid pace, with new features being added annually through the ECMAScript specification. ES2024 (ES15) brings several exciting additions that can make your code more expressive, performant, and maintainable. Let's explore the most impactful features that every developer should know.

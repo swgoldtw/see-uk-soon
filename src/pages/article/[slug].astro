@@ -49,7 +49,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
         category && (
           <span>
             Posted in
-            <a href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`} class="dark:text-gray-400 hover:underline no-underline">
+            <a href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`} class="text-gray-500 dark:text-gray-400 hover:underline no-underline">
               <strong>{category}</strong>
             </a>
           </span>
@@ -71,17 +71,19 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   <!-- Light Horizontal Bar -->
   <!-- <hr class="border-t border-gray-200 dark:border-gray-700 my-8" /> -->
 
-  <!-- Show featured image -->
-  {
-    large && (
-      <div class="mb-8">
-        <img src={large} alt={title} class="w-full h-auto rounded-lg shadow-md" />
-      </div>
-    )
-  }
+  
+  
 
   <!-- Blog Post Content -->
-  <article class="prose prose-h2:text-2xl prose-lg max-w-none text-gray-700 dark:prose-strong:text-slate-100 dark:text-slate-300 prose-headings:text-gray-900 dark:prose-headings:text-slate-100 prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-code:text-gray-900 dark:prose-code:text-slate-100 prose-pre:bg-gray-100 dark:prose-pre:bg-slate-800 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-600 prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
+  <article class="mt-10 prose prose-h2:text-2xl prose-lg max-w-none text-gray-700 dark:prose-strong:text-slate-100 dark:text-slate-300 prose-headings:text-gray-900 dark:prose-headings:text-slate-100 prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-code:text-gray-900 dark:prose-code:text-slate-100 prose-pre:bg-gray-100 dark:prose-pre:bg-slate-800 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-600 prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
+    <!-- Show featured image -->
+    {
+      large && (
+        <div class="mb-8">
+          <img src={large} alt={title} class="w-full h-auto rounded-lg shadow-md" />
+        </div>
+      )
+    }
     <Content />
   </article>
 
