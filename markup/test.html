@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light/Dark Mode Toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Enable dark mode class strategy
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-4">Light / Dark Mode Example</h1>
+            <p class="mb-6">Click the button below to toggle between light and dark mode.</p>
+            <button onclick="document.documentElement.classList.toggle('dark')" class="px-6 py-3 rounded-lg bg-gray-800 text-white dark:bg-gray-200 dark:text-black hover:opacity-90 transition">
+                Toggle Dark Mode
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

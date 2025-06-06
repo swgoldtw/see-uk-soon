@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Blog Post</title>
+    <script src="//cdn.tailwindcss.com"></script>
+    <script>
+        // Enable dark mode class strategy
+        tailwind.config = {
+            darkMode: 'class',
+        };
+
+        // Prevent flash of unstyled content (FOUC) by setting theme before page renders
+        (function () {
+            const theme = localStorage.getItem('theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300">
+    <!-- Black Topbar -->
+    <div class="w-full bg-black h-3"></div>
+
+    <!-- Main Container -->
+    <div class="max-w-[1000px] mx-auto px-4">
+        <!-- Header -->
+        <header class="flex flex-col items-center mt-10 mb-8 relative">
+            <button onclick="toggleTheme()" id="theme-toggle-button" aria-label="Toggle theme" class="absolute top-0 right-0 mt-2 mr-2 p-2 rounded-md text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors">
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-6.364-.386 1.591-1.591M3 12h2.25m.386-6.364 1.591 1.591" />
+                </svg>
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </button>
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="w-28 h-28 rounded-full object-cover border-4 border-gray-200 dark:border-gray-700 shadow mb-6">
+            <h1 class="text-4xl font-bold tracking-tight mb-2 text-center">Lilith's Monochrome Blog</h1>
+            <p class="text-lg text-gray-500 dark:text-gray-400 font-light text-center">Minimal musings on code, design, and life</p>
+        </header>
+
+        <!-- Light Horizontal Bar -->
+        <hr class="border-t border-gray-200 dark:border-gray-700 my-8">
+
+        <header class="mb-8 relative">
+
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-gray-900 dark:text-slate-100">
+                The Art of Writing Clean Code
+            </h1>
+            <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 space-x-4 mb-2">
+                <span>By Lilith Morgan</span>
+                <span>May 5, 2025</span>
+                <span>
+                    <a href="#" class="hover:underline">Coding</a>
+                </span>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Tags:
+                <a href="#" class="bg-gray-100 text-gray-600 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-slate-600">Development</a>,
+                <a href="#" class="bg-gray-100 text-gray-600 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-slate-600">Best Practices</a>,
+                <a href="#" class="bg-gray-100 text-gray-600 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-slate-600">Software</a>
+            </div>
+        </header>
+
+        <!-- Light Horizontal Bar -->
+        <hr class="border-t border-gray-200 dark:border-gray-700 my-8">
+
+        <!-- Blog Post Content -->
+        <article class="prose prose-lg max-w-none text-gray-700 dark:text-slate-300 dark:prose-invert">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <h2 class="text-2xl font-semibold mt-6 mb-3">Understanding the Principles</h2>
+            <p>Phasellus vestibulum, quam ut eleifend consequat, lectus arcu egestas massa, sit amet tincidunt lorem orci et libero. Nullam nec purus ut nisl tincidunt aliquet. Curabitur non justo et odio porttitor consequat. Integer eget ex vitae arcu iaculis laoreet. Vivamus nec magna eu odio rhoncus dignissim.</p>
+
+            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" alt="Coding on a laptop" class="rounded-lg my-6 shadow">
+
+            <p>Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
+
+            <blockquote class="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 my-6">
+                "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler
+            </blockquote>
+
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper.</p>
+        </article>
+
+        <!-- Light Horizontal Bar -->
+        <hr class="border-t border-gray-200 dark:border-gray-700 my-12">
+
+        <!-- Similar Posts Section -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-slate-200">You Might Also Like</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Similar Post 1 -->
+                <article class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Laptop with code" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-lg font-bold mb-2 hover:underline"><a href="#" class="dark:text-white">Why I Love Tailwind CSS</a></h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">A deep dive into the utility-first CSS framework and its benefits.</p>
+                    <a href="#" class="text-black dark:text-white underline text-sm mt-auto self-start">Read More</a>
+                </article>
+                <!-- Similar Post 2 -->
+                <article class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=400&q=80" alt="Code on screen" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-lg font-bold mb-2 hover:underline"><a href="#" class="dark:text-white">10 VS Code Shortcuts You Need</a></h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">Boost your productivity with these essential VS Code shortcuts.</p>
+                    <a href="#" class="text-black dark:text-white underline text-sm mt-auto self-start">Read More</a>
+                </article>
+                <!-- Similar Post 3 -->
+                <article class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=80" alt="Developer workspace" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-lg font-bold mb-2 hover:underline"><a href="#" class="dark:text-white">Astro vs Next.js: A Comparison</a></h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">Comparing two popular JavaScript frameworks for web development.</p>
+                    <a href="#" class="text-black dark:text-white underline text-sm mt-auto self-start">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Minimal Footer -->
+        <footer class="mt-16 py-8 text-center text-gray-400 dark:text-gray-500 text-sm border-t border-gray-100 dark:border-gray-700">
+            &copy; 2025 Lilith's Blog. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            if (newTheme === 'dark') {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcons();
+        }
+
+        function updateThemeIcons() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (isDark) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        // Initialize theme icons on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateThemeIcons();
+        });
+
+        // Basic prose styling for Tailwind - you might want to use the @tailwindcss/typography plugin for more advanced styling
+        // This is a simplified version. For full typography support, consider the plugin.
+        const proseElements = 'p, ul, ol, blockquote, h2, h3, h4, h5, h6';
+        document.querySelectorAll('.prose ' + proseElements).forEach(el => {
+            if (el.tagName.startsWith('H')) {
+                // Tailwind's dark mode will handle text color via dark:prose-invert on the article
+                el.classList.add('font-semibold', 'tracking-tight');
+                if (el.tagName === 'H2') el.classList.add('text-2xl', 'mt-8', 'mb-3');
+                if (el.tagName === 'H3') el.classList.add('text-xl', 'mt-6', 'mb-2');
+            } else if (el.tagName === 'P') {
+                el.classList.add('leading-relaxed', 'mb-4');
+            } else if (el.tagName === 'UL' || el.tagName === 'OL') {
+                el.classList.add('list-inside', 'mb-4');
+                if (el.tagName === 'UL') el.classList.add('list-disc');
+                if (el.tagName === 'OL') el.classList.add('list-decimal');
+            } else if (el.tagName === 'BLOCKQUOTE') {
+                // Tailwind's dark mode will handle text and border color via dark:prose-invert
+                el.classList.add('border-l-4', 'pl-4', 'italic', 'my-6');
+            }
+        });
+        document.querySelectorAll('.prose a').forEach(el => {
+            // Tailwind's dark mode will handle link color via dark:prose-invert
+            el.classList.add('text-indigo-600', 'hover:underline');
+        });
+        document.querySelectorAll('.prose img').forEach(el => {
+            el.classList.add('rounded-lg', 'my-6', 'shadow-md', 'max-w-full', 'h-auto');
+        });
+    </script>
+</body>
+
+</html>
