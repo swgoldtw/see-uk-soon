@@ -334,7 +334,7 @@ return paginate(sortedPosts, {
 ### Netlify
 
 1. Connect your GitHub repository
-2. Build command: `bun build`
+2. Build command: `bun build` or `npm run build` or `pnpm build`
 3. Publish directory: `dist`
 
 ### Vercel
@@ -345,7 +345,7 @@ return paginate(sortedPosts, {
 
 ### Static Hosting
 
-After running `bun build`, upload the `dist/` folder to any static hosting service.
+After running `bun run build`, upload the `dist/` folder to any static hosting service.
 
 ---
 
