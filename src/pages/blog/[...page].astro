@@ -14,7 +14,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
 
   return paginate(sortedPosts, {
-    pageSize: 8, // Number of posts per page
+    pageSize: SiteOptions.numberOfBlogPostsPerPage || 8, // Number of posts per page
   })
 }) satisfies GetStaticPaths
 

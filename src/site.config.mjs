@@ -26,7 +26,9 @@ export default {
     showSimilarPosts: true, // Display similar posts on article pages
     showReadMoreLinkOnFeaturedPosts: true, // Show "Read More" on featured cards
     showThumbnailOnFeaturedPosts: true, // Display thumbnails on featured posts
-    numberOfLatestPostsPerPage: 6, // Number of latest posts on homepage
+    numberOfLatestPostsOnHomePage: 6, // Number of latest posts on homepage
+    numberOfBlogPostsPerPage: 8, // Number of posts per paginated blog
+
     gTag: "G-V5QHDKBFP" // Google Analytics tracking ID
 }
 

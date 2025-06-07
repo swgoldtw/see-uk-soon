@@ -15,7 +15,7 @@ const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() -
 const featuredPosts = allPosts.filter((post) => post.data.featured).slice(0, 3)
 
 // Get latest posts for homepage (limit to 6)
-const latestPosts = sortedPosts.slice(0, SiteOptions.numberOfLatestPostsPerPage || 6)
+const latestPosts = sortedPosts.slice(0, SiteOptions.numberOfLatestPostsOnHomePage || 6)
 ---
 
 <BlogLayout title=`${SiteOptions.siteTitle}`>
