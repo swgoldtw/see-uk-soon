@@ -2,6 +2,7 @@
 title: "Start Your Blog with Storyteller Theme"
 description: "Complete guide to setting up your own blog using the Storyteller Astro theme - from installation to customization and deployment."
 pubDate: 2025-06-07
+author: "Hasin Hayder"
 category: "Tutorial"
 tags: ["astro", "blog", "theme", "storyteller", "tutorial"]
 featured: true

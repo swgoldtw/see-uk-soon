@@ -2,6 +2,7 @@
 title: "The Future of CSS: Modern Layout Techniques"
 description: "Exploring CSS Grid, Flexbox, Container Queries, and other modern CSS features that are transforming how we build layouts."
 pubDate: 2025-01-10
+author: "The Storyteller"
 category: "CSS"
 tags: ["css", "grid", "flexbox", "layout", "modern web"]
 featured: false

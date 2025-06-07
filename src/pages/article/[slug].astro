@@ -43,7 +43,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
       {title}
     </h1>
     <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 space-x-4 mb-4">
-      <span>By {author}</span>
+      <span>By <a href={`/author/${author.toLowerCase().replace(/\s+/g, "-")}`} class="text-gray-500 dark:text-gray-400 hover:underline no-underline"><strong>{author}</strong></a></span>
       <span>{formattedDate}</span>
       {
         category && (

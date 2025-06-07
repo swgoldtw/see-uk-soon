@@ -20,6 +20,13 @@ import SiteOptions from "../site.config.mjs"
           </a>
         )
       }
+      {
+        SiteOptions.showAuthorsLinkOnFooter && (
+          <a href="/authors" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors font-medium">
+            Authors
+          </a>
+        )
+      }
     </div>
   </nav>
 </footer>
