@@ -273,6 +273,7 @@ export default {
   showAuthorsOnHomePage: false, // Show author info on homepage
   showFeaturrdPostsOnHomePage: true, // Display featured posts section
   numberOfLatestPostsPerPage: 6, // Number of latest posts on homepage
+  numberOfBlogPostsPerPage: 8, // Number of posts per paginated blog page
 
   // UI Labels (Customizable Text)
   labels: {
@@ -321,6 +322,7 @@ export default {
 | `showAuthorsOnHomePage`              | Boolean | `false`               | Display author information on homepage       |
 | `showFeaturrdPostsOnHomePage`        | Boolean | `true`                | Show featured posts section on homepage      |
 | `numberOfLatestPostsPerPage`         | Number  | `6`                   | Number of latest posts displayed on homepage |
+| `numberOfBlogPostsPerPage`           | Number  | `8`                   | Number of posts per paginated blog page      |
 | **UI Labels & Text**                 |
 | `labels.featuredPosts`               | String  | "Featured Posts"      | Title for featured posts section             |
 | `labels.latestPosts`                 | String  | "Latest Posts"        | Title for latest posts section               |
