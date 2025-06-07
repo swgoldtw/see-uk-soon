@@ -18,6 +18,7 @@ export default {
         exploreArticlesByTags: "Explore articles organized by topics", // Tags page description
         exploreArticlesByCategories: "Explore articles organized by topics", // Categories page description
         exploreArticlesByAuthors: "Explore articles organized by authors", // Authors page description
+        readMore: "Read More", // Text for "Read More" links on featured posts
     },
     defaultAuthorName: "Hasin Hayder",
     showCategoriesLinkOnFooter: true, // Show Categories link in footer

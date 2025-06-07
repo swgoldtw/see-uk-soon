@@ -23,7 +23,7 @@ const { title, description, thumb } = post.data
   {
     SiteOptions.showReadMoreLinkOnFeaturedPosts && (
       <a href={`/article/${post.slug}`} class="text-black dark:text-white underline text-sm mt-auto self-start">
-        Read More
+        {SiteOptions.labels.readMore}
       </a>
     )
   }
