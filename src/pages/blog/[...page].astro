@@ -25,6 +25,7 @@ const allPosts = await getCollection("article")
 const featuredPosts = page.currentPage === 1 ? allPosts.filter((post) => post.data.featured).slice(0, 3) : []
 
 const pageTitle = page.currentPage === 1 ? SiteOptions.siteTitle : `Blog - Page ${page.currentPage} | ${SiteOptions.siteTitle}`
+const showCategory = SiteOptions.showCategoryOnPosts || false
 ---
 
 <BlogLayout title={pageTitle}>
@@ -37,7 +38,7 @@ const pageTitle = page.currentPage === 1 ? SiteOptions.siteTitle : `Blog - Page 
   <section>
     <!-- <h2 class={`text-2xl font-semibold mb-8  text-center`}>All Posts</h2> -->
     <ul class="space-y-4">
-      {page.data.map((post) => <PostCard post={post} />)}
+      {page.data.map((post) => <PostCard post={post} showCategory={showCategory} />)}
     </ul>
   </section>
 

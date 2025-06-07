@@ -4,6 +4,7 @@ export default {
     copyright: "© 2025 The Storyteller. All Rights Reserved.", // Footer copyright text
     showAuthorsOnHomePage: false, // Display author info on homepage
     showFeaturrdPostsOnHomePage: true, // Show featured posts section on homepage
+    showCategoryOnPosts: true, // Display categories on posts in homepage
     labels: {
         featuredPosts: "Featured Posts", // Title for featured posts section
         latestPosts: "Latest Posts", // Title for latest posts section
