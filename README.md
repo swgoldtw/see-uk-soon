@@ -311,6 +311,7 @@ export default {
   // Post Display Options
   showSimilarPosts: true, // Show similar posts on article pages
   showSocialShare: true, // Show social share buttons on article pages
+  socialShareButtons: ["twitter", "facebook", "linkedin", "reddit"], // Which social buttons to show
   showReadMoreLinkOnFeaturedPosts: true, // Show "Read More" on featured cards
   showThumbnailOnFeaturedPosts: true, // Display thumbnails on featured posts
 
@@ -321,42 +322,43 @@ export default {
 
 #### Configuration Options
 
-| Option                               | Type    | Default               | Description                                  |
-| ------------------------------------ | ------- | --------------------- | -------------------------------------------- |
+| Option                               | Type    | Default                                         | Description                                  |
+| ------------------------------------ | ------- | ----------------------------------------------- | -------------------------------------------- |
 | **Basic Site Information**           |
-| `siteTitle`                          | String  | "The Storyteller"     | Main site title displayed in header          |
-| `siteSubTitle`                       | String  | "Minimal musings..."  | Subtitle/tagline shown under title           |
-| `copyright`                          | String  | "© 2025..."           | Copyright text in footer                     |
+| `siteTitle`                          | String  | "The Storyteller"                               | Main site title displayed in header          |
+| `siteSubTitle`                       | String  | "Minimal musings..."                            | Subtitle/tagline shown under title           |
+| `copyright`                          | String  | "© 2025..."                                     | Copyright text in footer                     |
 | **Homepage Display**                 |
-| `showAuthorsOnHomePage`              | Boolean | `false`               | Display author information on homepage       |
-| `showFeaturrdPostsOnHomePage`        | Boolean | `true`                | Show featured posts section on homepage      |
-| `numberOfLatestPostsPerPage`         | Number  | `6`                   | Number of latest posts displayed on homepage |
-| `numberOfBlogPostsPerPage`           | Number  | `8`                   | Number of posts per paginated blog page      |
+| `showAuthorsOnHomePage`              | Boolean | `false`                                         | Display author information on homepage       |
+| `showFeaturrdPostsOnHomePage`        | Boolean | `true`                                          | Show featured posts section on homepage      |
+| `numberOfLatestPostsPerPage`         | Number  | `6`                                             | Number of latest posts displayed on homepage |
+| `numberOfBlogPostsPerPage`           | Number  | `8`                                             | Number of posts per paginated blog page      |
 | **UI Labels & Text**                 |
-| `labels.featuredPosts`               | String  | "Featured Posts"      | Title for featured posts section             |
-| `labels.latestPosts`                 | String  | "Latest Posts"        | Title for latest posts section               |
-| `labels.viewAllPosts`                | String  | "View All Posts"      | Text for pagination link                     |
-| `labels.backToHome`                  | String  | "Back to Home"        | Back navigation text                         |
-| `labels.youMightAlsoLike`            | String  | "You Might Also Like" | Similar posts section title                  |
-| `labels.postedIn`                    | String  | "Posted in"           | Category prefix text in articles             |
-| `labels.noArticlesFound`             | String  | "No articles found."  | Empty state message                          |
-| `labels.allCategories`               | String  | "All Categories"      | Categories page main title                   |
-| `labels.allTags`                     | String  | "All Tags"            | Tags page main title                         |
-| `labels.allAuthors`                  | String  | "All Authors"         | Authors page main title                      |
-| `labels.exploreArticlesByTags`       | String  | "Explore articles..." | Tags page description                        |
-| `labels.exploreArticlesByCategories` | String  | "Explore articles..." | Categories page description                  |
-| `labels.exploreArticlesByAuthors`    | String  | "Explore articles..." | Authors page description                     |
+| `labels.featuredPosts`               | String  | "Featured Posts"                                | Title for featured posts section             |
+| `labels.latestPosts`                 | String  | "Latest Posts"                                  | Title for latest posts section               |
+| `labels.viewAllPosts`                | String  | "View All Posts"                                | Text for pagination link                     |
+| `labels.backToHome`                  | String  | "Back to Home"                                  | Back navigation text                         |
+| `labels.youMightAlsoLike`            | String  | "You Might Also Like"                           | Similar posts section title                  |
+| `labels.postedIn`                    | String  | "Posted in"                                     | Category prefix text in articles             |
+| `labels.noArticlesFound`             | String  | "No articles found."                            | Empty state message                          |
+| `labels.allCategories`               | String  | "All Categories"                                | Categories page main title                   |
+| `labels.allTags`                     | String  | "All Tags"                                      | Tags page main title                         |
+| `labels.allAuthors`                  | String  | "All Authors"                                   | Authors page main title                      |
+| `labels.exploreArticlesByTags`       | String  | "Explore articles..."                           | Tags page description                        |
+| `labels.exploreArticlesByCategories` | String  | "Explore articles..."                           | Categories page description                  |
+| `labels.exploreArticlesByAuthors`    | String  | "Explore articles..."                           | Authors page description                     |
 | **Navigation & Footer**              |
-| `showCategoriesLinkOnFooter`         | Boolean | `true`                | Show Categories link in footer               |
-| `showTagsLinkOnFooter`               | Boolean | `true`                | Show Tags link in footer                     |
-| `showAuthorsLinkOnFooter`            | Boolean | `true`                | Show Authors link in footer                  |
+| `showCategoriesLinkOnFooter`         | Boolean | `true`                                          | Show Categories link in footer               |
+| `showTagsLinkOnFooter`               | Boolean | `true`                                          | Show Tags link in footer                     |
+| `showAuthorsLinkOnFooter`            | Boolean | `true`                                          | Show Authors link in footer                  |
 | **Post Display Options**             |
-| `showSimilarPosts`                   | Boolean | `true`                | Display similar posts on article pages       |
-| `showSocialShare`                    | Boolean | `true`                | Show social share buttons on article pages   |
-| `showReadMoreLinkOnFeaturedPosts`    | Boolean | `true`                | Show "Read More" link on featured cards      |
-| `showThumbnailOnFeaturedPosts`       | Boolean | `true`                | Display thumbnail images on featured posts   |
+| `showSimilarPosts`                   | Boolean | `true`                                          | Display similar posts on article pages       |
+| `showSocialShare`                    | Boolean | `true`                                          | Show social share buttons on article pages   |
+| `socialShareButtons`                 | Array   | `["twitter", "facebook", "linkedin", "reddit"]` | Which social platforms to show for sharing   |
+| `showReadMoreLinkOnFeaturedPosts`    | Boolean | `true`                                          | Show "Read More" link on featured cards      |
+| `showThumbnailOnFeaturedPosts`       | Boolean | `true`                                          | Display thumbnail images on featured posts   |
 | **Analytics**                        |
-| `gTag`                               | String  | "G-V5QHDKBFP"         | Google Analytics tracking ID (optional)      |
+| `gTag`                               | String  | "G-V5QHDKBFP"                                   | Google Analytics tracking ID (optional)      |
 
 ### Pagination Settings
 
@@ -367,6 +369,50 @@ return paginate(sortedPosts, {
   pageSize: 8, // Posts per page
 })
 ```
+
+### Social Share Configuration
+
+The social share functionality allows readers to easily share articles on various platforms. You can control which social platforms are available and customize the sharing experience.
+
+#### Enabling/Disabling Social Share
+
+```javascript
+// src/site.config.mjs
+export default {
+  // Enable or disable the entire social share section
+  showSocialShare: true, // Set to false to hide all social share buttons
+
+  // Control which platforms to show
+  socialShareButtons: ["twitter", "facebook", "linkedin", "reddit"],
+}
+```
+
+#### Available Platforms
+
+The following social platforms are supported:
+
+- **`"twitter"`** - Share on Twitter/X
+- **`"facebook"`** - Share on Facebook
+- **`"linkedin"`** - Share on LinkedIn
+- **`"reddit"`** - Share on Reddit
+
+#### Customization Examples
+
+```javascript
+// Show only Twitter and LinkedIn
+socialShareButtons: ["twitter", "linkedin"]
+
+// Show all platforms
+socialShareButtons: ["twitter", "facebook", "linkedin", "reddit"]
+
+// Show no social buttons (but keep copy link functionality)
+socialShareButtons: []
+
+// Disable social sharing entirely
+showSocialShare: false
+```
+
+**Note:** The "Copy Link" button is always available when social sharing is enabled, regardless of the `socialShareButtons` configuration.
 
 ---
 
