@@ -75,7 +75,7 @@
 - **Static Generation**: Lightning-fast loading with pre-built pages
 - **Minimal Dependencies**: Clean codebase with essential dependencies only
 - **Optimized Assets**: Compressed and optimized for web delivery
-- **SEO Ready**: Meta tags, OpenGraph, and structured data support
+- **SEO Ready**: Meta tags, OpenGraph, and sitemap support
 
 ### 👥 **Multi-Author Support**
 
@@ -433,7 +433,6 @@ export default {
 
 - **Meta Tags**: Automatic generation for all pages
 - **OpenGraph**: Social media preview support
-- **Structured Data**: JSON-LD for search engines
 - **Sitemap**: Auto-generated XML sitemap
 - **RSS Feed**: Built-in RSS feed generation
 
