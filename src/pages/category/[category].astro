@@ -57,7 +57,7 @@ const { category, posts } = Astro.props
         </ul>
       ) : (
         <div class="text-center py-12">
-          <p class="text-gray-500 dark:text-gray-400 text-lg">No articles found in this category.</p>
+          <p class="text-gray-500 dark:text-gray-400 text-lg">{SiteOptions.labels.noArticlesFound}</p>
         </div>
       )
     }
@@ -69,13 +69,13 @@ const { category, posts } = Astro.props
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
       </svg>
-      All Categories
+      {SiteOptions.labels.allCategories}
     </a>
     <a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
       </svg>
-      Home
+      {SiteOptions.labels.backToHome}
     </a>
   </div>
 

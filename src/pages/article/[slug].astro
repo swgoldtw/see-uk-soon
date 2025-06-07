@@ -48,7 +48,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
       {
         category && (
           <span>
-            Posted in
+            {SiteOptions.labels.postedIn}
             <a href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`} class="text-gray-500 dark:text-gray-400 hover:underline no-underline">
               <strong>{category}</strong>
             </a>
@@ -68,12 +68,6 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
     </div>
   </header>
 
-  <!-- Light Horizontal Bar -->
-  <!-- <hr class="border-t border-gray-200 dark:border-gray-700 my-8" /> -->
-
-  
-  
-
   <!-- Blog Post Content -->
   <article class="mt-10 prose prose-h2:text-2xl prose-lg max-w-none text-gray-700 dark:prose-strong:text-slate-100 dark:text-slate-300 prose-headings:text-gray-900 dark:prose-headings:text-slate-100 prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-code:text-gray-900 dark:prose-code:text-slate-100 prose-pre:bg-gray-100 dark:prose-pre:bg-slate-800 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-600 prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
     <!-- Show featured image -->
@@ -87,15 +81,12 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
     <Content />
   </article>
 
-  <!-- Light Horizontal Bar -->
-  
-
   <!-- Similar Posts Section -->
   {
     SiteOptions.showSimilarPosts && similarPosts.length > 0 && (
     <hr class="border-t border-gray-200 dark:border-gray-700 my-12" />
       <section>
-        <h2 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-slate-200">You Might Also Like</h2>
+        <h2 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-slate-200">{SiteOptions.labels.youMightAlsoLike}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {similarPosts.map((similarPost) => (
             <FeaturedCard post={similarPost} />

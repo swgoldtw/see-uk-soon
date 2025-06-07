@@ -1,5 +1,5 @@
 export default {
-    siteTitle: "The StoryTeller",
+    siteTitle: "The Storyteller",
     siteSubTitle: "Minimal musings on code, design, and life",
     copyright: "© 2025 The Storyteller. All Rights Reserved.",
     showAuthorsOnHomePage: false,
@@ -8,7 +8,14 @@ export default {
         featuredPosts: "Featured Posts",
         latestPosts: "Latest Posts",
         viewAllPosts: "View All Posts",
-        backToHome: "Back to Home"
+        backToHome: "Back to Home",
+        youMightAlsoLike: "You Might Also Like",
+        postedIn: "Posted in",
+        noArticlesFound: "No articles found.",
+        allCategories: "All Categories",
+        allTags: "All Tags",
+        exploreArticlesByTags:"Explore articles organized by topics",
+        exploreArticlesByCategories:"Explore articles organized by topics",
     },
     showCategoriesLinkOnFooter: true,
     showTagsLinkOnFooter: true,
