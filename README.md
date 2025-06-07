@@ -80,11 +80,6 @@
   <img src="https://res.cloudinary.com/roxlox/image/upload/v1749266607/storyteller/storyteller-dark_cqkugu.jpg" alt="Homepage - Dark" />
 </div>
 
-<div align="center">
-  <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Categories+Page" alt="Categories" />
-  <img src="https://via.placeholder.com/400x300/FFFFFF/000000?text=Dark+Mode" alt="Dark Mode" />
-</div>
-
 ---
 
 ## 🚀 Quick Start
