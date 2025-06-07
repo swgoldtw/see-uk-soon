@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css"
+import SiteOptions from "../site.config.mjs"
 
 export interface Props {
   title: string
@@ -25,6 +26,24 @@ const { title, description = "Minimal musings on code, design, and life" } = Ast
         document.documentElement.classList.toggle("dark", theme === "dark")
       })()
     </script>
+    {SiteOptions.gTag && (
+      <script
+        data-category="analytics"
+        is:inline
+        type="text/partytown"
+        src={`https://www.googletagmanager.com/gtag/js?id=${SiteOptions.gTag}`}
+      ></script>
+
+      <script data-category="analytics" is:inline type="text/partytown" define:vars={{gTag: SiteOptions.gTag}}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", gTag);
+      </script>
+    )}
   </head>
 
   <body class="bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 min-h-full">

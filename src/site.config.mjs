@@ -14,8 +14,8 @@ export default {
         noArticlesFound: "No articles found.",
         allCategories: "All Categories",
         allTags: "All Tags",
-        exploreArticlesByTags:"Explore articles organized by topics",
-        exploreArticlesByCategories:"Explore articles organized by topics",
+        exploreArticlesByTags: "Explore articles organized by topics",
+        exploreArticlesByCategories: "Explore articles organized by topics",
     },
     showCategoriesLinkOnFooter: true,
     showTagsLinkOnFooter: true,
@@ -23,5 +23,6 @@ export default {
     showReadMoreLinkOnFeaturedPosts: true,
     showThumbnailOnFeaturedPosts: true,
     numberOfLatestPostsPerPage: 6,
+    gTag: "G-V5QHDKBFP"
 }
 
