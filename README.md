@@ -4,14 +4,8 @@
   <img src="https://res.cloudinary.com/roxlox/image/upload/v1749266794/storyteller/storyteller_zcihgf.png" alt="Storyteller Monochrome Blog Theme Preview" />
   
   <p align="center">
-    <strong>A beautiful, minimal, and highly functional blog theme built with Astro</strong| `labels.exploreArticlesByCategories` | String  | "Explore articles..." | Categories page description                  |
-| `labels.exploreArticlesByAuthors`    | String  | "Explore articles..." | Authors page description                     |
-| **Default Author Settings**          |
-| `defaultAuthorName`                  | String  | "Hasin Hayder"        | Default author name for posts without explicit author |
-| **Navigation & Footer**              |
-| `showCategoriesLinkOnFooter`         | Boolean | `true`                | Show Categories link in footer               |
-| `showTagsLinkOnFooter`               | Boolean | `true`                | Show Tags link in footer                     |
-| `showAuthorsLinkOnFooter`            | Boolean | `true`                | Show Authors link in footer                  |/p>
+    <strong>A beautiful, minimal, and highly functional blog theme built with Astro</strong>
+  </p>
   
   <p align="center">
     <img src="https://img.shields.io/badge/Astro-5.9.0-FF5D01?style=flat-square&logo=astro" alt="Astro" />
@@ -75,7 +69,7 @@
 - **Static Generation**: Lightning-fast loading with pre-built pages
 - **Minimal Dependencies**: Clean codebase with essential dependencies only
 - **Optimized Assets**: Compressed and optimized for web delivery
-- **SEO Ready**: Meta tags, OpenGraph, and sitemap support
+- **SEO Ready**: Meta tags and OpenGraph support
 
 ### 👥 **Multi-Author Support**
 
