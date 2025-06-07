@@ -79,6 +79,14 @@
 - **Flexible Attribution**: Easy author assignment via frontmatter
 - **Multiple Authors**: Support for any number of blog contributors
 
+### 📤 **Social Sharing**
+
+- **Multiple Platforms**: Share to Twitter, Facebook, LinkedIn, and Reddit
+- **Copy Link**: One-click link copying with visual feedback
+- **Responsive Design**: Mobile-optimized share buttons
+- **Configurable**: Easy to enable/disable via site configuration
+- **Privacy-Focused**: Direct sharing without tracking scripts
+
 ---
 
 ## 🎯 Demo
@@ -302,6 +310,7 @@ export default {
 
   // Post Display Options
   showSimilarPosts: true, // Show similar posts on article pages
+  showSocialShare: true, // Show social share buttons on article pages
   showReadMoreLinkOnFeaturedPosts: true, // Show "Read More" on featured cards
   showThumbnailOnFeaturedPosts: true, // Display thumbnails on featured posts
 
@@ -343,6 +352,7 @@ export default {
 | `showAuthorsLinkOnFooter`            | Boolean | `true`                | Show Authors link in footer                  |
 | **Post Display Options**             |
 | `showSimilarPosts`                   | Boolean | `true`                | Display similar posts on article pages       |
+| `showSocialShare`                    | Boolean | `true`                | Show social share buttons on article pages   |
 | `showReadMoreLinkOnFeaturedPosts`    | Boolean | `true`                | Show "Read More" link on featured cards      |
 | `showThumbnailOnFeaturedPosts`       | Boolean | `true`                | Display thumbnail images on featured posts   |
 | **Analytics**                        |

@@ -25,6 +25,7 @@ export default {
     showTagsLinkOnFooter: true, // Show Tags link in footer
     showAuthorsLinkOnFooter: true, // Show Authors link in footer
     showSimilarPosts: true, // Display similar posts on article pages
+    showSocialShare: true, // Show social share buttons on article pages
     showReadMoreLinkOnFeaturedPosts: true, // Show "Read More" on featured cards
     showThumbnailOnFeaturedPosts: true, // Display thumbnails on featured posts
     numberOfLatestPostsOnHomePage: 6, // Number of latest posts on homepage
