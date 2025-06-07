@@ -13,8 +13,8 @@ const { title, description, thumb } = post.data
 <article class="bg-gray-50 dark:bg-slate-800 rounded-lg shadow-sm p-6 flex flex-col items-start">
   {
     SiteOptions.showThumbnailOnFeaturedPosts && thumb && (
-      <a href={`/article/${post.slug}`}>
-        <img src={thumb} alt={title} class="w-full h-40 object-cover rounded mb-4" />
+      <a href={`/article/${post.slug}`} class="w-full">
+        <img src={thumb} alt={title} class="w-full h-auto object-cover rounded mb-4" />
       </a>
     )
   }
