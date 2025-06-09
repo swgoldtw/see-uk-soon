@@ -293,6 +293,14 @@ export default {
     exploreArticlesByAuthors: "Explore articles organized by authors", // Authors page description
   },
 
+  // Pagination Configuration
+  pagination: {
+    showPrevNext: true, // Show Previous/Next navigation buttons
+    prevText: "Previous", // Text for previous page button
+    nextText: "Next", // Text for next page button
+    postLabel: "posts", // Label used in pagination info (e.g., "8 posts")
+  },
+
   // Default Author Settings
   defaultAuthorName: "Hasin Hayder", // Default author name for posts without explicit author
 
@@ -339,6 +347,11 @@ export default {
 | `labels.exploreArticlesByTags`       | String  | "Explore articles..." | Tags page description                        |
 | `labels.exploreArticlesByCategories` | String  | "Explore articles..." | Categories page description                  |
 | `labels.exploreArticlesByAuthors`    | String  | "Explore articles..." | Authors page description                     |
+| **Pagination Settings**              |
+| `pagination.showPrevNext`            | Boolean | `true`                | Show Previous/Next navigation buttons        |
+| `pagination.prevText`                | String  | "Previous"            | Text for previous page button                |
+| `pagination.nextText`                | String  | "Next"                | Text for next page button                    |
+| `pagination.postLabel`               | String  | "posts"               | Label used in pagination info display        |
 | **Navigation & Footer**              |
 | `showCategoriesLinkOnFooter`         | Boolean | `true`                | Show Categories link in footer               |
 | `showTagsLinkOnFooter`               | Boolean | `true`                | Show Tags link in footer                     |

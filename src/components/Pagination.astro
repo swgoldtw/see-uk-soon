@@ -1,4 +1,5 @@
 ---
+import SiteOptions from "../site.config.mjs"
 export interface Props {
   page: {
     data: any[]
@@ -20,13 +21,14 @@ const { page } = Astro.props
 <nav class="flex justify-center items-center space-x-4 mt-12" aria-label="Pagination Navigation">
   <!-- Previous Button -->
   {
-    page.url.prev ? (
-      <a href={page.url.prev} class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md hover:border-gray-400 dark:hover:border-gray-500 transition-colors" aria-label="Go to previous page">
-        ← Previous
-      </a>
-    ) : (
-      <span class="px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">← Previous</span>
-    )
+    SiteOptions.pagination.showPrevNext &&
+      (page.url.prev ? (
+        <a href={page.url.prev} class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md hover:border-gray-400 dark:hover:border-gray-500 transition-colors" aria-label="Go to previous page">
+          ← {SiteOptions.pagination.prevText}
+        </a>
+      ) : (
+        <span class="px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">← {SiteOptions.pagination.prevText}</span>
+      ))
   }
 
   <!-- Page Numbers -->
@@ -51,17 +53,19 @@ const { page } = Astro.props
 
   <!-- Next Button -->
   {
-    page.url.next ? (
-      <a href={page.url.next} class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md hover:border-gray-400 dark:hover:border-gray-500 transition-colors" aria-label="Go to next page">
-        Next →
-      </a>
-    ) : (
-      <span class="px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">Next →</span>
-    )
+    SiteOptions.pagination.showPrevNext &&
+      (page.url.next ? (
+        <a href={page.url.next} class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-md hover:border-gray-400 dark:hover:border-gray-500 transition-colors" aria-label="Go to next page">
+          {SiteOptions.pagination.nextText} →
+        </a>
+      ) : (
+        <span class="px-4 py-2 text-sm font-medium text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">{SiteOptions.pagination.nextText} →</span>
+      ))
   }
 </nav>
 
 <!-- Pagination Info -->
 <div class="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
-  Showing {(page.currentPage - 1) * page.size + 1} to {Math.min(page.currentPage * page.size, page.total)} of {page.total} posts
+  Showing {(page.currentPage - 1) * page.size + 1} to {Math.min(page.currentPage * page.size, page.total)} of {page.total}
+  {SiteOptions.pagination.postLabel}
 </div>
