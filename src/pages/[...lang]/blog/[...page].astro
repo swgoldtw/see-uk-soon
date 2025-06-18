@@ -1,0 +1,103 @@
+---
+import { getCollection } from "astro:content"
+import type { GetStaticPaths } from "astro"
+import BlogLayout from "../../../layouts/BlogLayout.astro"
+import Header from "../../../components/Header.astro"
+import Footer from "../../../components/Footer.astro"
+import PostCard from "../../../components/PostCard.astro"
+import FeaturedCard from "../../../components/FeaturedCard.astro"
+import Pagination from "../../../components/Pagination.astro"
+import SiteOptions from "../../../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../../../i18n/config.ts"
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("article")
+  
+  // Filter posts by language based on folder structure
+  const englishPosts = allPosts.filter(post => !post.slug.startsWith('zh/'))
+  const chinesePosts = allPosts.filter(post => post.slug.startsWith('zh/'))
+  
+  const paths = []
+  
+  // Generate paths for English blog pagination
+  const sortedEnglishPosts = englishPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  const englishPages = paginate(sortedEnglishPosts, {
+    pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
+  })
+  
+  englishPages.forEach((page) => {
+    paths.push({
+      params: { 
+        lang: undefined,
+        page: page.params.page
+      },
+      props: { 
+        page,
+        posts: sortedEnglishPosts,
+        currentLang: 'en'
+      },
+    })
+  })
+  
+  // Generate paths for Chinese blog pagination
+  const sortedChinesePosts = chinesePosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  const chinesePages = paginate(sortedChinesePosts, {
+    pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
+  })
+  
+  chinesePages.forEach((page) => {
+    paths.push({
+      params: { 
+        lang: 'zh',
+        page: page.params.page
+      },
+      props: { 
+        page,
+        posts: sortedChinesePosts,
+        currentLang: 'zh'
+      },
+    })
+  })
+  
+  return paths
+}) satisfies GetStaticPaths
+
+const { lang } = Astro.params
+const currentLang = lang || 'en'
+const t = useTranslations(currentLang as 'en' | 'zh')
+const { page, posts } = Astro.props
+
+// Get featured posts for the first page only (filtered by language)
+const featuredPosts = page.currentPage === 1 ? posts.filter((post) => post.data.featured).slice(0, 3) : []
+
+const pageTitle = page.currentPage === 1 
+  ? SiteOptions.siteTitle 
+  : `${currentLang === 'zh' ? '部落格' : 'Blog'} - ${currentLang === 'zh' ? '第 ' + page.currentPage + ' 頁' : 'Page ' + page.currentPage} | ${SiteOptions.siteTitle}`
+const showCategory = SiteOptions.showCategoryOnPosts || false
+
+// Generate language-specific URLs for pagination
+const getLangUrl = (path: string) => {
+  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+};
+---
+
+<BlogLayout title={pageTitle}>
+  <Header />
+
+  <!-- Light Horizontal Bar -->
+  <hr class="border-t border-gray-200 dark:border-gray-700 my-8" />
+
+  <!-- Latest Blog Posts -->
+  <section>
+    <!-- <h2 class={`text-2xl font-semibold mb-8  text-center`}>All Posts</h2> -->
+    <ul class="space-y-4">
+      {page.data.map((post) => <PostCard post={post} showCategory={showCategory} />)}
+    </ul>
+  </section>
+
+  <!-- Pagination -->
+  <Pagination page={page} />
+
+  <!-- Minimal Footer -->
+  <Footer />
+</BlogLayout> 

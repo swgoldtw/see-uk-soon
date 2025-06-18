@@ -1,15 +1,23 @@
 ---
 import { getCollection } from "astro:content"
-import BlogLayout from "../layouts/BlogLayout.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import PostCard from "../components/PostCard.astro"
-import FeaturedCard from "../components/FeaturedCard.astro"
-import SiteOptions from "../site.config.mjs"
-import { getLangFromUrl, useTranslations } from "../i18n/config";
+import BlogLayout from "../../layouts/BlogLayout.astro"
+import Header from "../../components/Header.astro"
+import Footer from "../../components/Footer.astro"
+import PostCard from "../../components/PostCard.astro"
+import FeaturedCard from "../../components/FeaturedCard.astro"
+import SiteOptions from "../../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../../i18n/config";
 
-const currentLang = getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } }, // /
+    { params: { lang: 'zh' } },      // /zh
+  ]
+}
+
+const { lang } = Astro.params
+const currentLang = lang || 'en'
+const t = useTranslations(currentLang as 'en' | 'zh');
 
 // Get all articles and filter by language based on folder structure
 const allPosts = await getCollection("article")
@@ -85,4 +93,4 @@ const getLangUrl = (path: string) => {
     <!-- Minimal Footer -->
     <Footer />
   </section>
-</BlogLayout>
+</BlogLayout> 
