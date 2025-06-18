@@ -4,46 +4,11 @@ import { languages, getLangFromUrl, useTranslations } from '../i18n/config';
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 
-// Get the current path and handle special cases
-const pathname = Astro.url.pathname;
-
-// Helper function to get the correct URL for each language
-function getLangPath(lang: string): string {
-  // Handle article pages specifically
-  if (pathname.startsWith('/article/')) {
-    const slug = pathname.replace('/article/', '');
-    return lang === 'zh' ? `/zh/article/${slug}` : `/article/${slug}`;
-  }
-  
-  if (pathname.startsWith('/zh/article/')) {
-    const slug = pathname.replace('/zh/article/', '');
-    return lang === 'en' ? `/article/${slug}` : `/zh/article/${slug}`;
-  }
-  
-  // Handle home page
-  if (pathname === '/' || pathname === '/zh') {
-    return lang === 'zh' ? '/zh' : '/';
-  }
-  
-  // Handle other pages
-  if (lang === 'zh') {
-    // If we're already on a Chinese page, keep it
-    if (pathname.startsWith('/zh')) {
-      return pathname;
-    }
-    // Otherwise, add zh prefix
-    return `/zh${pathname}`;
-  } else {
-    // For English, remove zh prefix if present
-    return pathname.replace(/^\/zh/, '') || '/';
-  }
-}
-
-// Generate language URLs
+// Simple language URLs for home page only
 const langUrls = Object.entries(languages).map(([lang, label]) => ({
   lang,
   label,
-  url: getLangPath(lang),
+  url: lang === 'zh' ? '/zh' : '/',
   isCurrent: lang === currentLang
 }));
 ---
