@@ -2,7 +2,7 @@
 title: "API设计艺术：构建开发者友好的接口"
 description: "探索设计API的原则和最佳实践，让开发者爱用并易于集成。"
 pubDate: 2025-05-18
-category: "API Design"
+category: "API设计"
 tags: ["api", "rest", "design", "developer-experience", "backend"]
 featured: true
 thumb: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80"
