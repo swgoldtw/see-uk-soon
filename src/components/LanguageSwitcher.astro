@@ -8,7 +8,7 @@ const t = useTranslations(currentLang);
 const langUrls = Object.entries(languages).map(([lang, label]) => ({
   lang,
   label,
-  url: lang === 'zh' ? '/zh' : '/',
+  url: lang === 'zh' ? '/' : '/en',
   isCurrent: lang === currentLang
 }));
 ---

@@ -12,25 +12,25 @@ export async function getStaticPaths() {
   
   const paths = []
   
-  // Generate paths for English articles (not in zh folder)
-  const englishPosts = posts.filter(post => !post.slug.startsWith('zh/'))
+  // Generate paths for English articles (in en folder)
+  const englishPosts = posts.filter(post => post.slug.startsWith('en/'))
   englishPosts.forEach((post) => {
     paths.push({
       params: { 
-        lang: undefined,
-        slug: post.slug 
+        lang: 'en',
+        slug: post.slug.replace('en/', '') // Remove en/ prefix for URL
       },
       props: post,
     })
   })
   
-  // Generate paths for Chinese articles (in zh folder)
-  const chinesePosts = posts.filter(post => post.slug.startsWith('zh/'))
+  // Generate paths for Chinese articles (not in en folder, i.e., in root)
+  const chinesePosts = posts.filter(post => !post.slug.startsWith('en/'))
   chinesePosts.forEach((post) => {
     paths.push({
       params: { 
-        lang: 'zh',
-        slug: post.slug.replace('zh/', '') // Remove zh/ prefix for URL
+        lang: undefined,
+        slug: post.slug 
       },
       props: post,
     })
@@ -42,19 +42,21 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"article">
 
 const { lang } = Astro.params
-const currentLang = lang || 'en'
+const currentLang = lang || 'zh'
 const post = Astro.props
 const { title, pubDate, category, description, tags, large } = post.data
 const { Content } = await post.render()
 const t = useTranslations(currentLang as 'en' | 'zh');
 
-// Get similar posts (same category, same language, excluding current post)
+// Get all articles and filter by language based on folder structure
 const allPosts = await getCollection("article")
-const currentLangPosts = allPosts.filter(p => {
+const currentLangPosts = allPosts.filter(post => {
   if (currentLang === 'zh') {
-    return p.slug.startsWith('zh/');
+    // For Chinese, only show articles NOT in the en folder (i.e., in the root)
+    return !post.slug.startsWith('en/');
   } else {
-    return !p.slug.startsWith('zh/');
+    // For English, only show articles in the en folder
+    return post.slug.startsWith('en/');
   }
 });
 
@@ -76,7 +78,7 @@ const formattedDate = new Intl.DateTimeFormat(
 
 // Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
 ---
 

@@ -8,24 +8,24 @@ import { getLangFromUrl, useTranslations } from "../../i18n/config.ts"
 
 export async function getStaticPaths() {
   return [
-    { params: { lang: undefined } }, // /categories
-    { params: { lang: 'zh' } },      // /zh/categories
+    { params: { lang: undefined } }, // /categories (Chinese)
+    { params: { lang: 'en' } },      // /en/categories (English)
   ]
 }
 
 const { lang } = Astro.params
-const currentLang = lang || 'en'
+const currentLang = lang || 'zh'
 const t = useTranslations(currentLang as 'en' | 'zh')
 
 // Get all articles and filter by language based on folder structure
 const allPosts = await getCollection("article")
 const currentLangPosts = allPosts.filter(post => {
   if (currentLang === 'zh') {
-    // For Chinese, only show articles in the zh folder
-    return post.slug.startsWith('zh/');
+    // For Chinese, only show articles NOT in the en folder (i.e., in the root)
+    return !post.slug.startsWith('en/');
   } else {
-    // For English, only show articles NOT in the zh folder
-    return !post.slug.startsWith('zh/');
+    // For English, only show articles in the en folder
+    return post.slug.startsWith('en/');
   }
 });
 
@@ -49,7 +49,7 @@ const categoryCounts = allCategories.map((category) => ({
 
 // Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
 ---
 
@@ -89,7 +89,7 @@ const getLangUrl = (path: string) => {
 
   <!-- Back to Home -->
   <div class="mt-12 text-center">
-    <a href={currentLang === 'en' ? "/" : "/zh"} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
+    <a href={currentLang === 'zh' ? "/" : "/en"} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
       </svg>

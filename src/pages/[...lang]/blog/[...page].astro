@@ -14,8 +14,8 @@ export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection("article")
   
   // Filter posts by language based on folder structure
-  const englishPosts = allPosts.filter(post => !post.slug.startsWith('zh/'))
-  const chinesePosts = allPosts.filter(post => post.slug.startsWith('zh/'))
+  const englishPosts = allPosts.filter(post => post.slug.startsWith('en/'))
+  const chinesePosts = allPosts.filter(post => !post.slug.startsWith('en/'))
   
   const paths: any[] = []
   
@@ -29,7 +29,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     englishPages.forEach((page) => {
       paths.push({
         params: { 
-          lang: undefined,
+          lang: 'en',
           page: page.params.page
         },
         props: { 
@@ -51,7 +51,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     chinesePages.forEach((page) => {
       paths.push({
         params: { 
-          lang: 'zh',
+          lang: undefined,
           page: page.params.page
         },
         props: { 
@@ -67,9 +67,21 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths
 
 const { lang } = Astro.params
-const currentLang = lang || 'en'
+const currentLang = lang || 'zh'
 const t = useTranslations(currentLang as 'en' | 'zh')
 const { page, posts } = Astro.props
+
+// Get all articles and filter by language based on folder structure
+const allPosts = await getCollection("article")
+const currentLangPosts = allPosts.filter(post => {
+  if (currentLang === 'zh') {
+    // For Chinese, only show articles NOT in the en folder (i.e., in the root)
+    return !post.slug.startsWith('en/');
+  } else {
+    // For English, only show articles in the en folder
+    return post.slug.startsWith('en/');
+  }
+});
 
 // Get featured posts for the first page only (filtered by language)
 const featuredPosts = page.currentPage === 1 ? posts.filter((post: any) => post.data.featured).slice(0, 3) : []
@@ -79,9 +91,9 @@ const pageTitle = page.currentPage === 1
   : `${currentLang === 'zh' ? '部落格' : 'Blog'} - ${currentLang === 'zh' ? '第 ' + page.currentPage + ' 頁' : 'Page ' + page.currentPage} | ${SiteOptions.siteTitle}`
 const showCategory = SiteOptions.showCategoryOnPosts || false
 
-// Generate language-specific URLs for pagination
+// Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
 ---
 

@@ -10,24 +10,24 @@ import { getLangFromUrl, useTranslations } from "../../i18n/config";
 
 export async function getStaticPaths() {
   return [
-    { params: { lang: undefined } }, // /
-    { params: { lang: 'zh' } },      // /zh
+    { params: { lang: undefined } }, // / (Chinese)
+    { params: { lang: 'en' } },      // /en (English)
   ]
 }
 
 const { lang } = Astro.params
-const currentLang = lang || 'en'
+const currentLang = lang || 'zh'
 const t = useTranslations(currentLang as 'en' | 'zh');
 
 // Get all articles and filter by language based on folder structure
 const allPosts = await getCollection("article")
 const currentLangPosts = allPosts.filter(post => {
   if (currentLang === 'zh') {
-    // For Chinese, only show articles in the zh folder
-    return post.slug.startsWith('zh/');
+    // For Chinese, only show articles NOT in the en folder (i.e., in the root)
+    return !post.slug.startsWith('en/');
   } else {
-    // For English, only show articles NOT in the zh folder
-    return !post.slug.startsWith('zh/');
+    // For English, only show articles in the en folder
+    return post.slug.startsWith('en/');
   }
 });
 
@@ -42,7 +42,7 @@ const showCategory = SiteOptions.showCategoryOnPosts || false
 
 // Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
 ---
 

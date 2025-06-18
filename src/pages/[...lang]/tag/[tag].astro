@@ -10,17 +10,17 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/config.ts"
 export async function getStaticPaths() {
   const allPosts = await getCollection("article")
   
-  // Get English tags (articles not in zh folder)
-  const englishPosts = allPosts.filter(post => !post.slug.startsWith('zh/'))
+  // Get English tags (articles in en folder)
+  const englishPosts = allPosts.filter(post => post.slug.startsWith('en/'))
   const englishTags = [...new Set(englishPosts.flatMap((post) => post.data.tags))]
   
-  // Get Chinese tags (articles in zh folder)
-  const chinesePosts = allPosts.filter(post => post.slug.startsWith('zh/'))
+  // Get Chinese tags (articles not in en folder, i.e., in root)
+  const chinesePosts = allPosts.filter(post => !post.slug.startsWith('en/'))
   const chineseTags = [...new Set(chinesePosts.flatMap((post) => post.data.tags))]
 
   const paths = []
   
-  // Generate paths for English (no lang prefix)
+  // Generate paths for English (en prefix)
   englishTags.forEach((tag) => {
     const tagPosts = englishPosts.filter((post) => 
       post.data.tags.some((postTag) => postTag.toLowerCase().replace(/\s+/g, "-") === tag.toLowerCase().replace(/\s+/g, "-"))
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
     if (tagPosts.length > 0) {
       paths.push({
         params: { 
-          lang: undefined,
+          lang: 'en',
           tag: tag.toLowerCase().replace(/\s+/g, "-")
         },
         props: {
@@ -39,7 +39,7 @@ export async function getStaticPaths() {
     }
   })
   
-  // Generate paths for Chinese (zh prefix)
+  // Generate paths for Chinese (no lang prefix)
   chineseTags.forEach((tag) => {
     const tagPosts = chinesePosts.filter((post) => 
       post.data.tags.some((postTag) => postTag.toLowerCase().replace(/\s+/g, "-") === tag.toLowerCase().replace(/\s+/g, "-"))
@@ -47,7 +47,7 @@ export async function getStaticPaths() {
     if (tagPosts.length > 0) {
       paths.push({
         params: { 
-          lang: 'zh',
+          lang: undefined,
           tag: tag.toLowerCase().replace(/\s+/g, "-")
         },
         props: {
@@ -67,14 +67,26 @@ type Props = {
 }
 
 const { lang, tag } = Astro.params
-const currentLang = lang || 'en'
+const currentLang = lang || 'zh'
 const t = useTranslations(currentLang as 'en' | 'zh')
 const { posts } = Astro.props
 
 // Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
+
+// Get all articles and filter by language based on folder structure
+const allPosts = await getCollection("article")
+const currentLangPosts = allPosts.filter(post => {
+  if (currentLang === 'zh') {
+    // For Chinese, only show articles NOT in the en folder (i.e., in the root)
+    return !post.slug.startsWith('en/');
+  } else {
+    // For English, only show articles in the en folder
+    return post.slug.startsWith('en/');
+  }
+});
 ---
 
 <BlogLayout title={`${tag} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? '标签为 ' + tag + ' 的文章' : 'Articles tagged with ' + tag}`}>
@@ -122,7 +134,7 @@ const getLangUrl = (path: string) => {
       </svg>
       {t('labels.allTags')}
     </a>
-    <a href={currentLang === 'en' ? "/" : "/zh"} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
+    <a href={currentLang === 'zh' ? "/" : "/en"} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
       </svg>

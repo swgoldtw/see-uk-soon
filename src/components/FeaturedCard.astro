@@ -14,20 +14,22 @@ const t = useTranslations(currentLang);
 
 // Generate language-specific URLs
 const getLangUrl = (path: string) => {
-  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+  return currentLang === 'zh' ? path : `/${currentLang}${path}`;
 };
 
 // Handle article URLs based on language and folder structure
 const getArticleUrl = (slug: string) => {
   if (currentLang === 'zh') {
-    // For Chinese, if the article is in zh folder, remove the zh/ prefix
-    if (slug.startsWith('zh/')) {
-      return getLangUrl(`/article/${slug.replace('zh/', '')}`);
+    // For Chinese, if the article is in en folder, skip it (shouldn't happen with proper filtering)
+    if (slug.startsWith('en/')) {
+      return getLangUrl(`/article/${slug.replace('en/', '')}`);
     }
+    // For Chinese articles in root, use the slug as is
+    return getLangUrl(`/article/${slug}`);
   } else {
-    // For English, if the article is NOT in zh folder
-    if (!slug.startsWith('zh/')) {
-      return getLangUrl(`/article/${slug}`);
+    // For English, if the article is in en folder, remove the en/ prefix
+    if (slug.startsWith('en/')) {
+      return getLangUrl(`/article/${slug.replace('en/', '')}`);
     }
   }
   // Fallback
