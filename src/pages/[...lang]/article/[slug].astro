@@ -9,21 +9,44 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/config";
 
 export async function getStaticPaths() {
   const posts = await getCollection("article")
-  // Only generate paths for Chinese articles (those in zh folder)
+  
+  const paths = []
+  
+  // Generate paths for English articles (not in zh folder)
+  const englishPosts = posts.filter(post => !post.slug.startsWith('zh/'))
+  englishPosts.forEach((post) => {
+    paths.push({
+      params: { 
+        lang: undefined,
+        slug: post.slug 
+      },
+      props: post,
+    })
+  })
+  
+  // Generate paths for Chinese articles (in zh folder)
   const chinesePosts = posts.filter(post => post.slug.startsWith('zh/'))
-  return chinesePosts.map((post) => ({
-    params: { slug: post.slug.replace('zh/', '') }, // Remove zh/ prefix for URL
-    props: post,
-  }))
+  chinesePosts.forEach((post) => {
+    paths.push({
+      params: { 
+        lang: 'zh',
+        slug: post.slug.replace('zh/', '') // Remove zh/ prefix for URL
+      },
+      props: post,
+    })
+  })
+  
+  return paths
 }
 
 type Props = CollectionEntry<"article">
 
+const { lang } = Astro.params
+const currentLang = lang || 'en'
 const post = Astro.props
 const { title, pubDate, category, description, tags, large } = post.data
 const { Content } = await post.render()
-const currentLang = getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
+const t = useTranslations(currentLang as 'en' | 'zh');
 
 // Get similar posts (same category, same language, excluding current post)
 const allPosts = await getCollection("article")
