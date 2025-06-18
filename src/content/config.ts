@@ -12,6 +12,7 @@ const articleCollection = defineCollection({
         featured: z.boolean().default(false),
         thumb: z.string().optional(),
         large: z.string().optional(),
+        lang: z.string().optional(),
     }),
 });
 

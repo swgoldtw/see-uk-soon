@@ -17,47 +17,51 @@ export const getStaticPaths = (async ({ paginate }) => {
   const englishPosts = allPosts.filter(post => !post.slug.startsWith('zh/'))
   const chinesePosts = allPosts.filter(post => post.slug.startsWith('zh/'))
   
-  const paths = []
+  const paths: any[] = []
   
   // Generate paths for English blog pagination
-  const sortedEnglishPosts = englishPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
-  const englishPages = paginate(sortedEnglishPosts, {
-    pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
-  })
-  
-  englishPages.forEach((page) => {
-    paths.push({
-      params: { 
-        lang: undefined,
-        page: page.params.page
-      },
-      props: { 
-        page,
-        posts: sortedEnglishPosts,
-        currentLang: 'en'
-      },
+  if (englishPosts.length > 0) {
+    const sortedEnglishPosts = englishPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+    const englishPages = paginate(sortedEnglishPosts, {
+      pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
     })
-  })
+    
+    englishPages.forEach((page) => {
+      paths.push({
+        params: { 
+          lang: undefined,
+          page: page.params.page
+        },
+        props: { 
+          page,
+          posts: sortedEnglishPosts,
+          currentLang: 'en'
+        },
+      })
+    })
+  }
   
   // Generate paths for Chinese blog pagination
-  const sortedChinesePosts = chinesePosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
-  const chinesePages = paginate(sortedChinesePosts, {
-    pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
-  })
-  
-  chinesePages.forEach((page) => {
-    paths.push({
-      params: { 
-        lang: 'zh',
-        page: page.params.page
-      },
-      props: { 
-        page,
-        posts: sortedChinesePosts,
-        currentLang: 'zh'
-      },
+  if (chinesePosts.length > 0) {
+    const sortedChinesePosts = chinesePosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+    const chinesePages = paginate(sortedChinesePosts, {
+      pageSize: SiteOptions.numberOfBlogPostsPerPage || 8,
     })
-  })
+    
+    chinesePages.forEach((page) => {
+      paths.push({
+        params: { 
+          lang: 'zh',
+          page: page.params.page
+        },
+        props: { 
+          page,
+          posts: sortedChinesePosts,
+          currentLang: 'zh'
+        },
+      })
+    })
+  }
   
   return paths
 }) satisfies GetStaticPaths
@@ -68,7 +72,7 @@ const t = useTranslations(currentLang as 'en' | 'zh')
 const { page, posts } = Astro.props
 
 // Get featured posts for the first page only (filtered by language)
-const featuredPosts = page.currentPage === 1 ? posts.filter((post) => post.data.featured).slice(0, 3) : []
+const featuredPosts = page.currentPage === 1 ? posts.filter((post: any) => post.data.featured).slice(0, 3) : []
 
 const pageTitle = page.currentPage === 1 
   ? SiteOptions.siteTitle 
@@ -91,12 +95,18 @@ const getLangUrl = (path: string) => {
   <section>
     <!-- <h2 class={`text-2xl font-semibold mb-8  text-center`}>All Posts</h2> -->
     <ul class="space-y-4">
-      {page.data.map((post) => <PostCard post={post} showCategory={showCategory} />)}
+      {page.data && page.data.length > 0 ? (
+        page.data.map((post: any) => <PostCard post={post} showCategory={showCategory} />)
+      ) : (
+        <li class="text-center text-gray-500 dark:text-gray-400 py-8">
+          {currentLang === 'zh' ? '暫無文章' : 'No posts found.'}
+        </li>
+      )}
     </ul>
   </section>
 
   <!-- Pagination -->
-  <Pagination page={page} />
+  {page.data && page.data.length > 0 && <Pagination page={page} />}
 
   <!-- Minimal Footer -->
   <Footer />
