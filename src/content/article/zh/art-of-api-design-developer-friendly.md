@@ -2,7 +2,6 @@
 title: "API设计艺术：构建开发者友好的接口"
 description: "探索设计API的原则和最佳实践，让开发者爱用并易于集成。"
 pubDate: 2025-05-18
-author: "Hasin Hayder"
 category: "API Design"
 tags: ["api", "rest", "design", "developer-experience", "backend"]
 featured: true

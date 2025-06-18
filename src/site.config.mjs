@@ -15,10 +15,8 @@ export default {
         noArticlesFound: "No articles found.", // Empty state message
         allCategories: "All Categories", // Categories page title
         allTags: "All Tags", // Tags page title
-        allAuthors: "All Authors", // Authors page title
         exploreArticlesByTags: "Explore articles organized by topics", // Tags page description
         exploreArticlesByCategories: "Explore articles organized by topics", // Categories page description
-        exploreArticlesByAuthors: "Explore articles organized by authors", // Authors page description
         readMore: "Read More", // Text for "Read More" links on featured posts
         shareThisArticle: "Share this article", // Share button text
     },
@@ -31,7 +29,6 @@ export default {
     defaultAuthorName: "Hasin Hayder",
     showCategoriesLinkOnFooter: true, // Show Categories link in footer
     showTagsLinkOnFooter: true, // Show Tags link in footer
-    showAuthorsLinkOnFooter: true, // Show Authors link in footer
     showSimilarPosts: true, // Display similar posts on article pages
     showReadMoreLinkOnFeaturedPosts: true, // Show "Read More" on featured cards
     showThumbnailOnFeaturedPosts: true, // Display thumbnails on featured posts

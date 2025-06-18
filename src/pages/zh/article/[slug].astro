@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"article">
 
 const post = Astro.props
-const { title, pubDate, category, description, thumb, author, tags, large } = post.data
+const { title, pubDate, category, description, tags, large } = post.data
 const { Content } = await post.render()
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
@@ -69,7 +69,6 @@ const getLangUrl = (path: string) => {
       {title}
     </h1>
     <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 space-x-4 mb-4">
-      <span>By <a href={getLangUrl(`/author/${author.toLowerCase().replace(/\s+/g, "-")}`)} class="text-gray-500 dark:text-gray-400 hover:underline no-underline"><strong>{author}</strong></a></span>
       <span>{formattedDate}</span>
       {
         category && (

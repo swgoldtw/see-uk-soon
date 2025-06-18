@@ -2,7 +2,6 @@
 title: "Why I Love Tailwind CSS"
 description: "A deep dive into the utility-first CSS framework and its benefits for rapid development."
 pubDate: 2025-05-20
-author: "The Storyteller"
 category: "CSS"
 tags: ["tailwind", "css", "web development"]
 featured: false

@@ -2,7 +2,6 @@
 title: "GraphQL vs REST: Choosing the Right API Architecture"
 description: "A comprehensive comparison of GraphQL and REST APIs, exploring their strengths, weaknesses, and ideal use cases for modern applications."
 pubDate: 2024-12-20
-author: "Hasin Hayder"
 category: "API Design"
 tags: ["graphql", "rest", "api", "backend", "architecture"]
 featured: true
