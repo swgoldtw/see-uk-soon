@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry } from "astro:content"
 import SiteOptions from "../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../i18n/config";
 
 export interface Props {
   post: CollectionEntry<"article">
@@ -8,19 +9,49 @@ export interface Props {
   showCategory?: boolean
 }
 
-const { post, showImage = false, showCategory = true } = Astro.props
-const { title, pubDate, category, description, author } = post.data
+const { post, showImage = false, showCategory = true } = Astro.props;
+const { title, pubDate, category, description, author } = post.data;
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
-const formattedDate = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-}).format(pubDate)
+// Generate language-specific URLs
+const getLangUrl = (path: string) => {
+  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+};
+
+// Handle article URLs based on language and folder structure
+const getArticleUrl = (slug: string) => {
+  if (currentLang === 'zh') {
+    // For Chinese, if the article is in zh folder, remove the zh/ prefix
+    if (slug.startsWith('zh/')) {
+      return getLangUrl(`/article/${slug.replace('zh/', '')}`);
+    }
+  } else {
+    // For English, if the article is NOT in zh folder
+    if (!slug.startsWith('zh/')) {
+      return getLangUrl(`/article/${slug}`);
+    }
+  }
+  // Fallback
+  return getLangUrl(`/article/${slug}`);
+};
+
+// Format date based on language
+const dateOptions = {
+  year: "numeric" as const,
+  month: "long" as const,
+  day: "numeric" as const,
+};
+
+const formattedDate = new Intl.DateTimeFormat(
+  currentLang === 'zh' ? 'zh-CN' : 'en-US', 
+  dateOptions
+).format(pubDate);
 ---
 
 <li class="flex flex-col sm:flex-row justify-between sm:items-center py-4 border-b border-gray-100 dark:border-gray-800">
   <div class="mb-2 sm:mb-0">
-    <a href={`/article/${post.slug}`} class="text-xl font-medium hover:underline">
+    <a href={getArticleUrl(post.slug)} class="text-xl font-medium hover:underline">
       {title}
       {SiteOptions.showAuthorsOnHomePage && author && <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">by {author}</span>}
     </a>

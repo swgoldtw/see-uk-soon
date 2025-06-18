@@ -1,18 +1,18 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content"
-import BlogLayout from "../../layouts/BlogLayout.astro"
-import Header from "../../components/Header.astro"
-import Footer from "../../components/Footer.astro"
-import FeaturedCard from "../../components/FeaturedCard.astro"
-import SiteOptions from "../../site.config.mjs"
-import { getLangFromUrl, useTranslations } from "../../i18n/config";
+import BlogLayout from "../../../layouts/BlogLayout.astro"
+import Header from "../../../components/Header.astro"
+import Footer from "../../../components/Footer.astro"
+import FeaturedCard from "../../../components/FeaturedCard.astro"
+import SiteOptions from "../../../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../../../i18n/config";
 
 export async function getStaticPaths() {
   const posts = await getCollection("article")
-  // Only generate paths for English articles (NOT in zh folder)
-  const englishPosts = posts.filter(post => !post.slug.startsWith('zh/'))
-  return englishPosts.map((post) => ({
-    params: { slug: post.slug },
+  // Only generate paths for Chinese articles (those in zh folder)
+  const chinesePosts = posts.filter(post => post.slug.startsWith('zh/'))
+  return chinesePosts.map((post) => ({
+    params: { slug: post.slug.replace('zh/', '') }, // Remove zh/ prefix for URL
     props: post,
   }))
 }
@@ -125,4 +125,4 @@ const getLangUrl = (path: string) => {
 
   <!-- Minimal Footer -->
   <Footer/>
-</BlogLayout>
+</BlogLayout> 

@@ -1,10 +1,14 @@
 ---
-import SiteOptions from "../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../i18n/config";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
 export interface Props {
   showTitle?: boolean
 }
 
-const { showTitle = true } = Astro.props
+const { showTitle = true } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <header class="flex flex-col items-center mt-10 mb-8 relative">
@@ -18,13 +22,18 @@ const { showTitle = true } = Astro.props
     </svg>
   </button>
 
-  <a href="/" class="flex flex-col items-center">
+  <!-- Language Switcher -->
+  <div class="absolute top-0 left-0 mt-2 ml-2">
+    <LanguageSwitcher />
+  </div>
+
+  <a href={currentLang === 'en' ? '/' : `/${currentLang}`} class="flex flex-col items-center">
     <img src="/images/storyteller.png" alt="Profile" class="w-28 h-28 rounded-full object-cover border-2 border-gray-200 dark:border-gray-700 shadow mb-6 hover:opacity-80 transition-opacity" />
     {
       showTitle && (
         <>
-          <h1 class="text-4xl font-bold tracking-tight mb-2 text-center hover:opacity-80 transition-opacity">{SiteOptions.siteTitle}</h1>
-          <p class="text-lg text-gray-500 dark:text-gray-400 font-light text-center">{SiteOptions.siteSubTitle}</p>
+          <h1 class="text-4xl font-bold tracking-tight mb-2 text-center hover:opacity-80 transition-opacity">{t('site.title')}</h1>
+          <p class="text-lg text-gray-500 dark:text-gray-400 font-light text-center">{t('site.subtitle')}</p>
         </>
       )
     }

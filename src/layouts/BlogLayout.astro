@@ -1,31 +1,37 @@
 ---
 import "../styles/global.css"
-import SiteOptions from "../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../i18n/config";
+import SiteOptions from "../site.config.mjs";
 
 export interface Props {
   title: string
   description?: string
 }
 
-const { title = SiteOptions.siteTitle, description = SiteOptions.siteSubTitle } = Astro.props
+const { title, description } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+
+const finalTitle = title || t('site.title');
+const finalDescription = description || t('site.subtitle');
 ---
 
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang={currentLang} class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={finalDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={finalTitle} />
+    <meta property="og:description" content={finalDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:site_name" content={SiteOptions.siteTitle} />
+    <meta property="og:site_name" content={t('site.title')} />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={finalTitle} />
+    <meta name="twitter:description" content={finalDescription} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <title>{finalTitle}</title>
     <script is:inline>
       // Theme initialization - prevents FOUC
       ;(() => {

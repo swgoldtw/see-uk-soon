@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content"
-import BlogLayout from "../layouts/BlogLayout.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import PostCard from "../components/PostCard.astro"
-import FeaturedCard from "../components/FeaturedCard.astro"
-import SiteOptions from "../site.config.mjs"
-import { getLangFromUrl, useTranslations } from "../i18n/config";
+import BlogLayout from "../../layouts/BlogLayout.astro"
+import Header from "../../components/Header.astro"
+import Footer from "../../components/Footer.astro"
+import PostCard from "../../components/PostCard.astro"
+import FeaturedCard from "../../components/FeaturedCard.astro"
+import SiteOptions from "../../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../../i18n/config";
 
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
@@ -85,4 +85,4 @@ const getLangUrl = (path: string) => {
     <!-- Minimal Footer -->
     <Footer />
   </section>
-</BlogLayout>
+</BlogLayout> 
