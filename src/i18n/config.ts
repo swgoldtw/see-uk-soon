@@ -34,6 +34,10 @@ export const ui = {
     'language.switch': 'Switch Language',
     'language.english': 'English',
     'language.chinese': '中文',
+    'categories.coding': 'Coding',
+    'categories.webDev': 'Web Dev',
+    'categories.apiDesign': 'API Design',
+    'categories.technology': 'Technology',
   },
   zh: {
     'nav.home': '首页',
@@ -63,6 +67,10 @@ export const ui = {
     'language.switch': '切换语言',
     'language.english': 'English',
     'language.chinese': '中文',
+    'categories.coding': '编程',
+    'categories.webDev': '网页开发',
+    'categories.apiDesign': 'API设计',
+    'categories.technology': '技术',
   },
 } as const;
 

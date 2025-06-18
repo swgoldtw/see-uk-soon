@@ -1,0 +1,141 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+import BlogLayout from "../../../layouts/BlogLayout.astro"
+import Header from "../../../components/Header.astro"
+import Footer from "../../../components/Footer.astro"
+import PostCard from "../../../components/PostCard.astro"
+import SiteOptions from "../../../site.config.mjs"
+import { getLangFromUrl, useTranslations } from "../../../i18n/config.ts"
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("article")
+  
+  // Get English categories (articles not in zh folder)
+  const englishPosts = allPosts.filter(post => !post.slug.startsWith('zh/'))
+  const englishCategories = [...new Set(englishPosts.map((post) => post.data.category))]
+  
+  // Get Chinese categories (articles in zh folder)
+  const chinesePosts = allPosts.filter(post => post.slug.startsWith('zh/'))
+  const chineseCategories = [...new Set(chinesePosts.map((post) => post.data.category))]
+
+  const paths = []
+  
+  // Generate paths for English (no lang prefix)
+  englishCategories.forEach((category) => {
+    const categoryPosts = englishPosts.filter((post) => post.data.category === category)
+    if (categoryPosts.length > 0) {
+      paths.push({
+        params: { 
+          lang: undefined,
+          category: category.toLowerCase().replace(/\s+/g, "-")
+        },
+        props: {
+          category,
+          posts: categoryPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+        },
+      })
+    }
+  })
+  
+  // Generate paths for Chinese (zh prefix)
+  chineseCategories.forEach((category) => {
+    const categoryPosts = chinesePosts.filter((post) => post.data.category === category)
+    if (categoryPosts.length > 0) {
+      paths.push({
+        params: { 
+          lang: 'zh',
+          category: category.toLowerCase().replace(/\s+/g, "-")
+        },
+        props: {
+          category,
+          posts: categoryPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+        },
+      })
+    }
+  })
+  
+  return paths
+}
+
+type Props = {
+  category: string
+  posts: CollectionEntry<"article">[]
+}
+
+const { lang, category } = Astro.params
+const currentLang = lang || 'en'
+const t = useTranslations(currentLang as 'en' | 'zh')
+const { posts } = Astro.props
+
+// Category mapping for translations
+const categoryTranslations: Record<string, string> = {
+  'Coding': t('categories.coding'),
+  'Web Dev': t('categories.webDev'),
+  'API Design': t('categories.apiDesign'),
+  'Technology': t('categories.technology'),
+}
+
+const translatedCategory = categoryTranslations[category] || category
+
+// Generate language-specific URLs
+const getLangUrl = (path: string) => {
+  return currentLang === 'en' ? path : `/${currentLang}${path}`;
+};
+---
+
+<BlogLayout title={`${translatedCategory} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? translatedCategory + ' 分类中的文章' : 'Articles in the ' + translatedCategory + ' category'}`}>
+  <Header showTitle={false} />
+
+  <!-- Light Horizontal Bar -->
+  <hr class="border-t border-gray-200 dark:border-gray-700 my-8" />
+
+  <!-- Page Header -->
+  <header class="mb-12 text-center">
+    <h1 class="text-3xl font-bold tracking-tight mb-4 text-gray-900 dark:text-slate-100">
+      {translatedCategory}
+    </h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400">
+      {posts.length}
+      {posts.length === 1 
+        ? (currentLang === 'zh' ? " 篇文章" : " article") 
+        : (currentLang === 'zh' ? " 篇文章" : " articles")
+      } {currentLang === 'zh' ? `在 ${translatedCategory} 分类中` : `in the ${translatedCategory} category`}
+    </p>
+  </header>
+
+  <!-- Posts List -->
+  <section>
+    {
+      posts.length > 0 ? (
+        <ul class="space-y-4">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </ul>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-gray-500 dark:text-gray-400 text-lg">{t('labels.noArticlesFound')}</p>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- Navigation -->
+  <div class="mt-12 flex justify-center space-x-6">
+    <a href={getLangUrl('/categories')} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+      </svg>
+      {t('labels.allCategories')}
+    </a>
+    <a href={currentLang === 'en' ? "/" : "/zh"} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-slate-100 transition-colors">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+      </svg>
+      {t('labels.backToHome')}
+    </a>
+  </div>
+
+  <!-- Minimal Footer -->
+  <Footer />
+</BlogLayout> 
