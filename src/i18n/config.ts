@@ -48,7 +48,7 @@ export const ui = {
     'site.title': '英國待會見',
     'site.subtitle': '英國長居生活備忘錄',
     'site.copyright': '© 2025 see.uk.later 保留所有權利。',
-    'labels.featuredPosts': '精選文章',
+    'labels.featuredPosts': '焦點文章',
     'labels.latestPosts': '最新文章',
     'labels.viewAllPosts': '查看所有文章',
     'labels.backToHome': '返回首頁',
