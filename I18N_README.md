@@ -35,7 +35,7 @@ This Astro project now supports internationalization with English and Chinese la
        // ... existing translations
      },
      zh: {
-       'new.key': '中文文本',
+       'new.key': '中文文字',
        // ... existing translations
      },
    }

@@ -95,7 +95,7 @@ const currentLangPosts = allPosts.filter(post => {
 });
 ---
 
-<BlogLayout title={`${translatedCategory} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? translatedCategory + ' 分类中的文章' : 'Articles in the ' + translatedCategory + ' category'}`}>
+<BlogLayout title={`${translatedCategory} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? translatedCategory + ' 分類中的文章' : 'Articles in the ' + translatedCategory + ' category'}`}>
   <Header showTitle={false} />
 
   <!-- Light Horizontal Bar -->
@@ -111,7 +111,7 @@ const currentLangPosts = allPosts.filter(post => {
       {posts.length === 1 
         ? (currentLang === 'zh' ? " 篇文章" : " article") 
         : (currentLang === 'zh' ? " 篇文章" : " articles")
-      } {currentLang === 'zh' ? `在 ${translatedCategory} 分类中` : `in the ${translatedCategory} category`}
+      } {currentLang === 'zh' ? `在 ${translatedCategory} 分類中` : `in the ${translatedCategory} category`}
     </p>
   </header>
 

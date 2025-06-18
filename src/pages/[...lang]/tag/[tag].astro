@@ -89,7 +89,7 @@ const currentLangPosts = allPosts.filter(post => {
 });
 ---
 
-<BlogLayout title={`${tag} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? '标签为 ' + tag + ' 的文章' : 'Articles tagged with ' + tag}`}>
+<BlogLayout title={`${tag} ${currentLang === 'zh' ? '文章' : 'Articles'} - ${SiteOptions.siteTitle}`} description={`${currentLang === 'zh' ? '標籤為 ' + tag + ' 的文章' : 'Articles tagged with ' + tag}`}>
   <Header showTitle={false} />
 
   <!-- Light Horizontal Bar -->
@@ -105,7 +105,7 @@ const currentLangPosts = allPosts.filter(post => {
       {posts.length === 1 
         ? (currentLang === 'zh' ? " 篇文章" : " article") 
         : (currentLang === 'zh' ? " 篇文章" : " articles")
-      } {currentLang === 'zh' ? `标签为 "${tag}"` : `tagged with "${tag}"`}
+      } {currentLang === 'zh' ? `標籤為 "${tag}"` : `tagged with "${tag}"`}
     </p>
   </header>
 
