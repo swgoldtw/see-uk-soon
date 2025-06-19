@@ -5,3 +5,32 @@
 code > span.line {
   color: #e2e8f0; /* slate-200 */
 }
+
+/* Make all images in markdown content responsive */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Optional: center images */
+}
+
+.img-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.img-row img {
+  max-width: 48%;
+  height: auto;
+  display: block;
+  /* Optional: add a little border-radius or box-shadow for style */
+}
+
+/* Make images take full width on small screens */
+@media (max-width: 600px) {
+  .img-row img {
+    max-width: 100%;
+  }
+}
