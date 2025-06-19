@@ -1,7 +1,7 @@
-# See.UK.Later - Minimal Astro Blog Theme
+# See.UK.Soon - Minimal Astro Blog Theme
 
 <div align="center">
-  <img src="https://res.cloudinary.com/roxlox/image/upload/v1749266794/storyteller/storyteller_zcihgf.png" alt="See.UK.Later Monochrome Blog Theme Preview" />
+  <img src="https://res.cloudinary.com/roxlox/image/upload/v1749266794/storyteller/storyteller_zcihgf.png" alt="See.UK.Soon Monochrome Blog Theme Preview" />
   
   <p align="center">
     <strong>A beautiful, minimal, and highly functional blog theme built with Astro</strong>
@@ -101,8 +101,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/hasinhayder/see-uk-later.git
-cd see-uk-later
+git clone https://github.com/hasinhayder/see-uk-soon.git
+cd see-uk-soon
 
 # Install dependencies
 bun install
@@ -126,7 +126,7 @@ Your blog will be available at `http://localhost:4321`
 ## 📁 Project Structure
 
 ```
-📦 See.UK.Later/
+📦 See.UK.Soon/
 ├── 📁 public/
 │   ├── 🖼️ images/           # Static images
 │   ├── 📄 favicon.svg       # Site favicon
