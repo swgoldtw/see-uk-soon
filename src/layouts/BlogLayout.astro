@@ -30,13 +30,13 @@ const finalDescription = description || t('site.subtitle');
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={finalTitle} />
     <meta name="twitter:description" content={finalDescription} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/images/see.uk.soon-browser-icon.ico?v=1" />
     <title>{finalTitle}</title>
     <script is:inline>
       // Theme initialization - prevents FOUC
       ;(() => {
-        const theme = localStorage.getItem("theme") ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
-
+        // Always default to light if no theme is set
+        const theme = localStorage.getItem("theme") ?? "light"
         document.documentElement.classList.toggle("dark", theme === "dark")
       })()
     </script>
