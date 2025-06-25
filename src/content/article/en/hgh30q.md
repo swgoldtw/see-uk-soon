@@ -12,50 +12,82 @@ lang: "en"
 
 ## A Contradictory Economic Picture
 
-Despite the ongoing contraction of the UK labor market, wages continue to rise, creating a seemingly contradictory economic picture.
+Many people feel that finding jobs in the UK is becoming increasingly difficult. But surprisingly, the data shows that employee salaries keep rising. This contrast is creating a growing gap between the old and new workplace realities.
 
 <div class="img-row">
-  <img src="/images/article/hgh30q/a1.webp" alt="Job Vacancy Trends" />
-  <img src="/images/article/hgh30q/a2.webp" alt="Employee Growth Rate" />
+  <figure>
+    <img src="/images/article/hgh30q/a1.webp" alt="Job Vacancy Trends" />
+    <figcaption>UK job vacancy trends over the years</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/article/hgh30q/a2.webp" alt="Employee Growth Rate" />
+    <figcaption>Employee growth rate trends</figcaption>
+  </figure>
 </div>
 
-According to the Office for National Statistics (ONS), over the past year, the UK has lost more than 103,000 jobs. Looking at the longer-term trend, since May 2022, the number of vacancies has continued to decline, now down about 4.3% compared to pre-pandemic levels, equivalent to 34,000 positions. Meanwhile, the growth in the number of employees has stagnated, with a 2% drop since 2023, on the verge of turning negative.
+According to the Office for National Statistics (ONS), just in the past year, the UK has lost over 100,000 job opportunities. Looking at the trend since May 2022, overall vacancies have been declining steadily, now down 4.3% compared to pre-pandemic levels, roughly 34,000 fewer positions. The total number of employees isn't looking great either, slowly dropping since 2023 and almost hitting negative growth.
 
 <div class="img-row">
-  <img src="/images/article/hgh30q/a3.webp" alt="Median Wage Trends" />
-  <img src="/images/article/hgh30q/b1.webp" alt="Real Wage Trends" />
+  <figure>
+    <img src="/images/article/hgh30q/a3.webp" alt="Median Wage Trends" />
+    <figcaption>Median wage change trends</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/article/hgh30q/b1.webp" alt="Real Wage Trends" />
+    <figcaption>Real wage change trends</figcaption>
+  </figure>
 </div>
 
-In contrast, wage trends tell a different story. Since March 2021, the annual growth rate of the UK median wage has remained above 5%. Even under high inflation, real wages have shown a recovery trend since November 2022, turning positive from April 2023. They have now returned to early 2022 levels, with increases ranging from 1% to 2.5%.
+But on the flip side, wages are actually going up, not down. Since March 2021, the annual growth rate of median wages has stayed consistently above 5%. Even with high inflation, real wages started stabilizing from late 2022, and by April 2023 they turned positive, now back to early 2022 levels with real increases of about 1% to 2.5%.
 
 ## Who's Getting the Biggest Raises?
 
 <div class="img-row">
-  <img src="/images/article/hgh30q/c1.webp" alt="2025 Industry Wages" />
-  <img src="/images/article/hgh30q/c2.webp" alt="2024 Industry Wages" />
+  <figure>
+    <img src="/images/article/hgh30q/c1.webp" alt="2025 Industry Wages" />
+    <figcaption>2025 industry wage comparison</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/article/hgh30q/c2.webp" alt="2024 Industry Wages" />
+    <figcaption>2024 industry wage comparison</figcaption>
+  </figure>
 </div>
 
-Looking closer at wage changes across industries, as of this April, the accommodation and food services sector saw the highest wage growth, with retail also above the overall median. In contrast, sectors like research, finance & insurance, and information & communication had lower increases. However, looking back to April a year ago, finance, insurance, and information & communication had wage growth on par with accommodation and food services, all exceeding 8%. This highlights the volatility in wage performance in these traditionally attractive sectors for international white-collar talent over the past two years.
+Looking deeper into wage changes across different industries, as of this April, accommodation and food services had the highest wage growth, with retail also above the overall median. In contrast, research, finance & insurance, and information & communication positions had lower increases. However, if we rewind to April last year, finance, insurance, and information & communication were actually leading the pack, matching accommodation and food services with all three exceeding 8%. This shows how much wage performance has fluctuated in these sectors that traditionally attract international white-collar talent over the past two years.
 
 ## Possible Reasons
 
 <div class="img-row">
-  <img src="/images/article/hgh30q/d1.webp" alt="Minimum Wage Trends" />
-  <img src="/images/article/hgh30q/d2.webp" alt="Industry Vacancy Growth" />
+  <figure>
+    <img src="/images/article/hgh30q/d1.webp" alt="Minimum Wage Trends" />
+    <figcaption>Minimum wage increase trends</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/article/hgh30q/d2.webp" alt="Industry Vacancy Growth" />
+    <figcaption>Industry vacancy growth compared to last year</figcaption>
+  </figure>
 </div>
 
-For this phenomenon of "job losses but rising wages," media and research institutions have offered various explanations. The Financial Times points out that significant increases in the minimum wage play a key role in overall wage data, and the slower growth in low-wage jobs compared to high-wage ones has pulled up the average wage. Economist Greg Thwaites approaches it from a labor supply and demand perspective, suggesting that many unemployed people are not actively seeking work, so job seekers do not need to lower their wage expectations. Additionally, with prices continuing to rise, workers are more inclined to seek higher-paying jobs to counter inflation, and productivity growth gives companies more room to raise wages, helping them stay competitive and retain talent.
+Why is this "fewer jobs but higher wages" phenomenon happening? Several explanations are being discussed.
+
+The Financial Times points out that minimum wages have increased significantly in recent years, plus high-earner growth has been faster than low-earner growth, pulling up the overall average wage. Economist Greg Thwaites thinks that many unemployed people aren't actively looking for work, so job seekers can hold onto their salary expectations without having to settle. Plus, in an environment of continuously rising prices, workers are more likely to seek high-paying jobs that can fight inflation. Additionally, if companies improve productivity, they also have more room to offer good salaries and retain talent.
 
 ## Where Did the Extra Money Go?
 
 <div class="img-row">
-  <img src="/images/article/hgh30q/e1.webp" alt="Savings Rate Trends" />
-  <img src="/images/article/hgh30q/e2.webp" alt="Household Spending Growth" />
+  <figure>
+    <img src="/images/article/hgh30q/e1.webp" alt="Savings Rate Trends" />
+    <figcaption>UK household savings rate changes</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/article/hgh30q/e2.webp" alt="Household Spending Growth" />
+    <figcaption>UK household spending growth trends</figcaption>
+  </figure>
 </div>
 
-Has this extra purchasing power been spent? According to ONS data, since Q3 2022, the UK household savings rate has climbed from 6.1% to 12% in Q4 2024. In other words, most of the additional income has been saved rather than spent. In fact, since Q2 2022, total household spending has barely changed, indicating that even with wage growth, UK households remain cautious and conservative in their spending habits.
+Has this extra purchasing power been spent? The reality is, even though people are earning more than before, they're still being quite cautious. Government data shows that UK households have been aggressively saving since Q3 2022, with the savings rate rising from 6.1% to 12% in Q4 2024. Meanwhile, household spending barely changed during the same period. Meaning—most of the extra money is being saved, and spending patterns haven't really changed.
 
-These intertwined trends together form the complex current landscape of the UK economy.
+These intertwined employment, wage, and consumption trends together form the complex current landscape of the UK economy.
 
 
 - - -
