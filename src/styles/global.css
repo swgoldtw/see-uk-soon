@@ -43,6 +43,11 @@ code > span.line {
   text-align: center;
   margin-top: 0.5rem;
 }
+
+.img-row figcaption a {
+  color: inherit;
+}
+
 @media (max-width: 800px) {
   .img-row  {
     gap: 5rem;

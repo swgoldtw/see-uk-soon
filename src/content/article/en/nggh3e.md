@@ -79,7 +79,7 @@ Facing continuously rising demand and limited medical resources, England's emerg
 <div class="img-row">
   <figure>
     <img src="/images/article/nggh3e/g1.webp"/>
-    <figcaption>Hospital waiting time query tool</figcaption>
+    <figcaption><a href="https://www.aandewaittimes.uk/" target="_blank">Hospital waiting time query website: www.aandewaittimes.uk</a></figcaption>
   </figure>
 </div>
 

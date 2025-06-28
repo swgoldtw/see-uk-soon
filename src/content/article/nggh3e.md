@@ -79,7 +79,7 @@ NHS最新數據揭示無論是搭救護車還是自行前往醫院，等待時�
 <div class="img-row">
   <figure>
     <img src="/images/article/nggh3e/g1.webp"/>
-    <figcaption>醫院等候時間查詢工具</figcaption>
+    <figcaption><a href="https://www.aandewaittimes.uk/" target="_blank">醫院等候時間查詢網站：www.aandewaittimes.uk</a></figcaption>
   </figure>
 </div>
 
