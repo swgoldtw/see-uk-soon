@@ -1,7 +1,7 @@
 ---
 title: "在英格蘭急診，要等多久？"
 description: "各種狀況下的等待時間"
-pubDate: 2025-06-29
+pubDate: 2025-06-28
 category: "醫療"
 tags: ["NHS", "醫療", "社會福利"]
 featured: true

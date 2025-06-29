@@ -1,7 +1,7 @@
 ---
 title: "How Long Will You Wait in English Emergency Rooms?"
 description: "Waiting Times Under Various Circumstances"
-pubDate: 2025-06-29
+pubDate: 2025-06-28
 category: "Healthcare"
 tags: ["NHS", "Healthcare", "Social Welfare"]
 featured: true
