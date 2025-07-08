@@ -123,8 +123,8 @@ const getLangUrl = (path: string) => {
     <!-- Show featured image -->
     {
       large && (
-        <div class="mb-8">
-          <img src={large} alt={title} class="w-full h-auto rounded-lg shadow-md" />
+        <div class="mb-8 flex justify-center">
+          <img src={large} alt={title} class="w-full h-auto max-w-[1200px] max-h-[700px] rounded-lg shadow-md object-cover" style="display: block; margin: 0 auto;" />
         </div>
       )
     }

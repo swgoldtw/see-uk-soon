@@ -19,7 +19,7 @@ code > span.line {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap; /* Allows wrapping on small screens */
-  margin: 3rem auto;
+  margin: 6rem auto;
 }
 
 .img-row img {
@@ -46,6 +46,12 @@ code > span.line {
 
 .img-row figcaption a {
   color: inherit;
+}
+
+/* Add equal space above and below markdown h2 and h3 headings */
+
+.prose h2{
+  margin: 6rem auto;
 }
 
 @media (max-width: 800px) {
