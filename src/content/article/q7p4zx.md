@@ -21,7 +21,7 @@ lang: "zh"
 
 世人總笑英國料理難吃，但事實上91% 的英國人對本國傳統料理表示滿意。然而追究下去，厭惡的料理數目又比喜歡的還多。
 
-YouGov 在 2019 年針對 6367 位英國成人進行調查[調查](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)，列出 30 道經典本土鹹食，結果由Yorkshire pudding以85%的喜愛比率奪冠。
+YouGov 在 2019 年針對 6367 位英國成人進行調查[調查](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)，列出 30 道經典本土鹹食，結果由Yorkshire pudding以85%的喜愛比率奪冠。從分類來看，被列入「低分群」（喜愛比率低於 60%）的有 14 項，高於「高分群」（70% 以上）9 項，中間地帶的有 7 項。
 
 <div class="img-row">
   <figure>
@@ -30,7 +30,14 @@ YouGov 在 2019 年針對 6367 位英國成人進行調查[調查](https://yougo
   </figure>
 </div>
 
-從分類來看，被列入「低分群」（喜愛比率低於 60%）的有 14 項，高於「高分群」（70% 以上）9 項，中間地帶的有 7 項。
+另一方面，鰻魚凍（Jellied eels）堪稱英國地獄料理之最，無其他料理可及。它以6%的喜愛比率墊底，顯著領先Laverbread的的12%喜愛比率。鰻魚凍挑戰已成為英國料理終極考驗的熱門題材，有無數的影片紀錄了世界各國人第一次吃下這道料理的反應。
+
+<div class="img-row">
+  <figure>
+    <img src="/images/article/q7p4zx/a+1.webp" />
+    <figcaption>網路上各種鰻魚凍挑戰的反應</figcaption>
+  </figure>
+</div>
 
 ## 男女最愛與最厭料理
 
@@ -60,7 +67,7 @@ YouGov 在 2019 年針對 6367 位英國成人進行調查[調查](https://yougo
 | Liver and onion（38%）| Black pudding（43%）  |
 | Kippers（30%）        | Jellied eels（43%）   |
 
-鰻魚凍（Jellied eels）是英國男女共同的噩夢，有超過4成的人表示不喜歡。肝臟和洋蔥（Liver and onion）雖然都榜上有名，但男女厭惡程度相差近10%。
+鰻魚凍是英國男女共同的噩夢，有超過4成的人表示不喜歡。肝臟和洋蔥（Liver and onion）雖然都榜上有名，但男女厭惡程度相差近10%。
 
 至於Black pudding，男性喜愛比率高於女性18%，女性厭惡度高於男性15%，是兩性意見最分歧的英國料理。跟異性聚餐？小心這道料理！
 

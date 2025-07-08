@@ -1,5 +1,5 @@
 ---
-title: "The Gendered Taste of British Cuisine: A Survey of 6,000 Britons"
+title: "The Gendered Taste of Food: A Survey of 6,000 British Men and Women"
 description: "What are the most loved, hated, and controversial British dishes?"
 pubDate: 2025-07-08
 category: "Food"
@@ -10,7 +10,7 @@ large: "/images/article/q7p4zx/cover.webp"
 lang: "en"
 ---
 
-## 91% of Britons Are Satisfied with Their Cuisine
+## 91% of Britons Are Satisfied with Their Own Cuisine
 
 <div class="img-row">
   <figure>
@@ -19,9 +19,9 @@ lang: "en"
   </figure>
 </div>
 
-The world often jokes about how bad British food is, but in reality, 91% of Britons are satisfied with their traditional cuisine. However, when you dig deeper, there are actually more dishes people dislike than like.
+The world always jokes about how bad British food is, but in fact, 91% of Britons are satisfied with their traditional cuisine. However, if you look deeper, there are actually more dishes people dislike than like.
 
-In 2019, YouGov surveyed 6,367 British adults ([survey](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)), listing 30 classic savory British dishes. Yorkshire pudding topped the list with an 85% approval rating.
+In 2019, YouGov surveyed 6,367 British adults ([survey](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)), listing 30 classic local savory dishes. Yorkshire pudding took the crown with an 85% approval rating. By category, there are 14 dishes in the "low score group" (approval below 60%), 9 in the "high score group" (above 70%), and 7 in the middle.
 
 <div class="img-row">
   <figure>
@@ -30,11 +30,18 @@ In 2019, YouGov surveyed 6,367 British adults ([survey](https://yougov.co.uk/con
   </figure>
 </div>
 
-By category, there are 14 dishes in the "low score group" (approval below 60%), 9 in the "high score group" (above 70%), and 7 in the middle.
+On the other hand, Jellied eels are considered the ultimate "hell dish" of British cuisine, unmatched by any other. With an approval rating of just 6%, it sits firmly at the bottom, still notably ahead of Laverbread’s 12%. The "Jellied eels challenge" has become the ultimate test of British food, with countless videos documenting people from around the world trying this dish for the first time.
 
-## Men’s and Women’s Most Loved and Hated Dishes
+<div class="img-row">
+  <figure>
+    <img src="/images/article/q7p4zx/a+1.webp" />
+    <figcaption>Online reactions to the Jellied eels challenge</figcaption>
+  </figure>
+</div>
 
-British men and women have slightly different favorites, but the gap isn’t huge.
+## Men’s and Women’s Most Loved and Most Hated Dishes
+
+British men and women have different favorites, but the gap isn’t huge.
 
 | Men’s Favorites         | Women’s Favorites         |
 | ---------------------- | ------------------------ |
@@ -60,27 +67,27 @@ On the other hand, the most disliked dishes show a more complex pattern.
 | Liver and onion (38%)   | Black pudding (43%)       |
 | Kippers (30%)           | Jellied eels (43%)        |
 
-Jellied eels are a nightmare for both genders, with over 40% disliking them. Liver and onion also appears on both lists, but the dislike rate differs by nearly 10% between men and women.
+Jellied eels are a nightmare for both genders, with over 40% saying they dislike it. Liver and onion also appears on both lists, but the dislike rate differs by nearly 10% between men and women.
 
-As for black pudding, men like it 18% more than women, and women dislike it 15% more than men, making it the most divisive dish between the sexes. Dining with the opposite gender? Watch out for this one!
+As for black pudding, men like it 18% more than women, and women dislike it 15% more than men, making it the most divisive dish between the sexes. Dining with the opposite gender? Be careful with this one!
 
 ## The Most Divisive Dishes Between Genders
 
 <div class="img-row">
   <figure>
     <img src="/images/article/q7p4zx/a3.webp" />
-    <figcaption>Dining with the opposite gender? Beware of these dishes!</figcaption>
+    <figcaption>Dining with the opposite gender? Watch out for these dishes!</figcaption>
   </figure>
 </div>
 
-A few other dishes also show large gender gaps in approval:
+There are also a few dishes with particularly large differences in approval rates between men and women:
 
 - Steak and kidney pie: Men like it 17% more than women
 - Steak and kidney pudding: Men like it 16% more than women
 - Pork pie: Women dislike it 13% more than men
 - Cauliflower cheese: Women like it 14% more than men
 
-Overall, British women are pickier about food than men:
+Overall, British women have noticeably higher standards for food than men:
 
 - Women’s average approval rate: 55%; men’s: 60%
 - Women’s average dislike rate: 21%; men’s: 16%
