@@ -21,7 +21,7 @@ lang: "zh"
 
 世人總笑英國料理難吃，但事實上91% 的英國人對本國傳統料理表示滿意。然而追究下去，厭惡的料理數目又比喜歡的還多。
 
-YouGov 在 2019 年針對 6367 位英國成人進行調查[調查](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)，列出 30 道經典本土鹹食，結果由Yorkshire pudding以85%的喜愛比率奪冠。從分類來看，被列入「低分群」（喜愛比率低於 60%）的有 14 項，高於「高分群」（70% 以上）9 項，中間地帶的有 7 項。
+YouGov 在 2019 年針對 6367 位英國成人進行[調查](https://yougov.co.uk/consumer/articles/23758-classic-british-cuisine-ranked-britons)，列出 30 道經典本土鹹食，結果由Yorkshire pudding以85%的喜愛比率奪冠。從分類來看，被列入「低分群」（喜愛比率低於 60%）的有 14 項，高於「高分群」（70% 以上）9 項，中間地帶的有 7 項。
 
 <div class="img-row">
   <figure>
